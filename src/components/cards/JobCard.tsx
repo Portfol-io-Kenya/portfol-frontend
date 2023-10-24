@@ -1,0 +1,69 @@
+import React from 'react';
+import Avatar from '../UI/Avatar';
+
+interface Props {
+    title: string,
+    location: string,
+    img?: any
+}
+
+const JobCard: React.FC<Props> = ({title, location, img}) => {
+    return (
+        <div className='flex flex-col my-3 p-4 rounded-md bg-white w-full'>
+            <div className="flex">
+                {/* job random ankara avatar  */}
+                <Avatar img={img}/>
+
+                {/* job small details  */}
+                <div className="flex flex-col flex-grow">
+                    <h4 className='font-semibold'>{title}</h4>
+                    <div className='flex gap-5'>
+                        <span className='text-xs text-slate-400'>UX/UI</span>
+                        <span className='text-xs text-slate-400'>|</span>
+                        <span className='text-xs text-slate-400'>Remote</span>
+                        <span className='text-xs text-slate-400'>|</span>
+                        <span className='text-xs text-slate-400'>$1,000 - $1, 500</span>
+                        <span className='text-xs text-slate-400'>|</span>
+                        <span className='text-xs text-slate-400'>3 - 6 months</span>
+                    </div>
+                </div>
+
+                {/* location  */}
+                <div className="flex flex-col items-end">
+                    <div className="flex items-center">
+                        <i className='text-lg text-slate-700 iconly-Location icbo'></i>
+                        <span className='font-medium ml-4'>{location}</span>
+                    </div>
+                    <span className='text-xs text-slate-400'>Posted 5 hours ago</span>
+                </div>
+            </div>
+
+            <div className="text-sm text-slate-500 py-3 mb-5">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                    dolore magna aliqua. Ut enim
+                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                    commodo consequat.
+                </p>
+            </div>
+
+            <div className="flex">
+                <div className="basis-10/12">
+                    <i className='text-lg text-green-600 iconly-Bookmark icbo'></i>
+                </div>
+
+                <div className="basis-2/12 flex justify-between">
+                    <span className='flex items-center'>
+                        <i className='text-lg text-orange-300 iconly-Star icbo'></i>
+                        <text className='text-xs text-slate-500 ml-2'>5.0</text>
+                    </span>
+
+                    <i className='text-lg text-blue-400 iconly-Shield-Done icbo'></i>
+                    
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default JobCard;

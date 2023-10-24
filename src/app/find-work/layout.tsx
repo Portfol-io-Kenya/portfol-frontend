@@ -24,7 +24,7 @@ export default function JobsLayout({
                 <SideBar />
 
                 {/* main content  */}
-                <section className="bg-slate-300 ml-3 mt-3 w-full rounded-md p-3">
+                <section className="ml-3 mt-3 w-full">
                     {children} 
                 </section>
             </div>    

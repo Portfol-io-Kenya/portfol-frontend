@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderMenu from './HeaderMenu';
+import Avatar from './UI/Avatar';
 
 const MENU = [
     {name: 'Find Work', href: '/find-work'},
@@ -9,9 +10,9 @@ const MENU = [
 ]
 const Header = () => {
     return (
-        <section className="sticky top-3 bg-white/70 backdrop-blur flex py-3 px-2 rounded-md">
+        <section className="sticky top-3 bg-white/70 backdrop-blur flex py-2 px-2 rounded-md">
                 {/* col 1  */}
-                <div className="flex w-full basis-3/5 items-center">
+                <div className="flex w-full basis-4/5 items-center">
                     {/* logo */}
                     <span className="font-bold text-md mr-10">Portfol.io</span>
 
@@ -20,10 +21,14 @@ const Header = () => {
                 </div>
 
                 {/* col 2  */}
-                <div className="">
+                <div className="basis-1/5 flex justify-end">
                     {/* notifications */}
 
                     {/* avatar */}
+                    <Avatar 
+                        img={'url(/media/avatars/avatar-01.jpg)'} 
+                        className={'rounded-full'}
+                    />
                 </div>
                 
             </section>
