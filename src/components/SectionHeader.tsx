@@ -1,7 +1,11 @@
 import React from 'react';
 import Card from './cards/Card';
 
-const SectionHeader = ({title}) => {
+interface Props {
+    title?: any
+}
+
+const SectionHeader: React.FC<Props> = ({title}) => {
     return (
         <Card 
             image='url(/media/bgs/pattern-8.jpg)'
