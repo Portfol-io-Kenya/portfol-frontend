@@ -10,7 +10,7 @@ interface Props {
 
 const JobCard: React.FC<Props> = ({title, location, img}) => {
     return (
-        <Card className='my-3 p-4 w-full'>
+        <Card className='bg-white my-3 p-4 w-full'>
             <div className="flex">
                 {/* job random ankara avatar  */}
                 <Avatar img={img}/>
