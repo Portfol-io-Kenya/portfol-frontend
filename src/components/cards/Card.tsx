@@ -32,7 +32,7 @@ export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
             }}
         >
             <div 
-                className={clsx(`bg-white text-black p-4 rounded-md`, className)}
+                className={clsx(`p-4 rounded-md`, className)}
             >
                 {children}
             </div>
