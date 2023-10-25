@@ -1,5 +1,6 @@
 import React from 'react';
 import Avatar from '../UI/Avatar';
+import Card from './Card';
 
 interface Props {
     title: string,
@@ -9,7 +10,7 @@ interface Props {
 
 const JobCard: React.FC<Props> = ({title, location, img}) => {
     return (
-        <div className='flex flex-col my-3 p-4 rounded-md bg-white w-full'>
+        <Card className='my-3 p-4 w-full'>
             <div className="flex">
                 {/* job random ankara avatar  */}
                 <Avatar img={img}/>
@@ -62,7 +63,7 @@ const JobCard: React.FC<Props> = ({title, location, img}) => {
                     
                 </div>
             </div>
-        </div>
+        </Card>
     );
 };
 

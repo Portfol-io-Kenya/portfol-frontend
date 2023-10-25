@@ -1,10 +1,11 @@
+import SectionHeader from '@/components/SectionHeader';
 import React from 'react';
 
 const ProjectManagement = () => {
     return (
-        <div>
-            i am io Pro!
-        </div>
+        <>
+            <SectionHeader title={'Project Management'} />
+        </>
     );
 };
 
