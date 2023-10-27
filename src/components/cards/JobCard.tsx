@@ -1,6 +1,9 @@
+"use client"
 import React from 'react';
 import Avatar from '../UI/Avatar';
 import Card from './Card';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface Props {
     title: string,
@@ -9,6 +12,7 @@ interface Props {
 }
 
 const JobCard: React.FC<Props> = ({title, location, img}) => {
+    const pathname = usePathname()
     return (
         <Card className='bg-white my-3 p-4 w-full'>
             <div className="flex">
@@ -17,7 +21,11 @@ const JobCard: React.FC<Props> = ({title, location, img}) => {
 
                 {/* job small details  */}
                 <div className="flex flex-col flex-grow">
-                    <h4 className='font-semibold'>{title}</h4>
+                    <h4 className='font-semibold'>
+                        <Link href={`${pathname}/1`}>
+                            {title}
+                        </Link>
+                    </h4>
                     <div className='flex gap-5'>
                         <span className='text-xs text-slate-400'>UX/UI</span>
                         <span className='text-xs text-slate-400'>|</span>

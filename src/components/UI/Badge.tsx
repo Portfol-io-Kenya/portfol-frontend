@@ -10,10 +10,11 @@ interface Props {
 
 const Badge = ({color, title, bgColor, textColor}: Props) => {
     return (
-        <div className={clsx(`flex flex-col py-1 px-4 rounded font-semibold text-xs bg-${color}-500 bg-opacity-20`, bgColor,
+        <div className={clsx(`flex flex-col py-1 px-4 rounded font-semibold text-xs bg-${color}-500`, bgColor,
             {
                 'bg-slate-300': !color,
-                'bg-opacity-100': bgColor
+                'bg-opacity-100': bgColor,
+                'bg-opacity-20': !bgColor,            
             }
         )}>
             <span className={`text-${color}-500 ${textColor}`}>{title}</span>
