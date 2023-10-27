@@ -1,16 +1,18 @@
 import React from 'react';
 
 interface Props {
-    className?: any
-    img: any
+    className?: string
+    img?: string
+    width?: string
+    height?: string
 }
 
-const Avatar: React.FC<Props> = ({className, img}) => {
+const Avatar: React.FC<Props> = ({className, img, width, height}) => {
     return (
         <div 
-            className={`w-[50px] h-[50px] rounded mr-5 ${className}`}
+            className={`${width ?? 'w-[50px]'} ${height ?? 'h-[50px]'} rounded ${className}`}
             style={{
-                backgroundImage: `${img}`,
+                backgroundImage: `${img ?? 'url(/media/avatars/avatar-01.jpg)'}`,
                 backgroundSize: "100%"
             }}
         ></div>

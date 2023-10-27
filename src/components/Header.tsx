@@ -27,7 +27,7 @@ const Header = () => {
                     {/* avatar */}
                     <Avatar 
                         img={'url(/media/avatars/avatar-01.jpg)'} 
-                        className={'rounded-full'}
+                        className={'rounded-full mr-5'}
                     />
                 </div>
                 

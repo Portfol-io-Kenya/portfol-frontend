@@ -22,6 +22,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/charts/RadialChart.jsx"],
+  "exclude": ["node_modules"],
+  "moduleResolution": ["node_modules", "node"]
 }

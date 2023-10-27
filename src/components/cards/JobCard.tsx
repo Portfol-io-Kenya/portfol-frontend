@@ -13,7 +13,7 @@ const JobCard: React.FC<Props> = ({title, location, img}) => {
         <Card className='bg-white my-3 p-4 w-full'>
             <div className="flex">
                 {/* job random ankara avatar  */}
-                <Avatar img={img}/>
+                <Avatar img={img} className={'mr-5'}/>
 
                 {/* job small details  */}
                 <div className="flex flex-col flex-grow">
