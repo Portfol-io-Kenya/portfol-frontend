@@ -8,7 +8,7 @@ const SidebarMenu = () => {
             <SidebarMenuItem 
                 title='Home'
                 icon='iconly-Home'
-                to={`${root}`}
+                to={`${root}/jobs`}
             />
             
             <SidebarMenuItem 

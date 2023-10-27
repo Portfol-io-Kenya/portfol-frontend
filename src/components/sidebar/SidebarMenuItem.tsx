@@ -12,7 +12,7 @@ type Props = {
 
 const SidebarMenuItem: React.FC<Props> = ({to, title, icon}) => {
     const pathname = usePathname();
-    const isActive = pathname === to;
+    const isActive = pathname.startsWith(to);
 
     return (
         <ul>

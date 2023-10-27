@@ -1,17 +1,25 @@
+"use client"
 import React from 'react';
 import Card from './Card';
 import DotBadge from '../DotBadge';
 import ProgressBar from '../UI/ProgressBar';
 import Avatar from '../UI/Avatar';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const ProjectCard = () => {
+    const pathname = usePathname();
     return (
         <Card
             image='url(/media/bgs/pattern-8.jpg)'
             bgColor='bg-gradient-to-br from-white via-white to-white/95'
             borderRadius='rounded-lg'
         >
-            <h3 className='font-[600] text-2xl text-slate-700 mb-1'>Safari Website</h3>
+            <h3 className='font-[600] text-2xl text-slate-700 mb-1'>
+                <Link href={`${pathname}/1`}>
+                    Safari Website
+                </Link>
+            </h3>
             <div className="flex">
                 <DotBadge className='text-red-500' text='5 Completed'/>
                 <DotBadge className='text-red-500' text='5 Completed'/>

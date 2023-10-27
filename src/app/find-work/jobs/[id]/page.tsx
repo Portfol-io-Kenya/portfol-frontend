@@ -5,11 +5,11 @@ import Card from '@/components/cards/Card';
 import SkillsCard from '@/components/cards/SkillsCard';
 import React from 'react';
 
-const Talent = () => {
+const SingleJob = () => {
     return (
         <div className='flex gap-3'>
             <div className="basis-3/4 flex flex-col gap-3">
-                <Card className='pt-0 px-0 pb-10'>
+                <Card className='p-0'>
                     <div 
                         className="h-48 w-full rounded-md"
                         style={{
@@ -25,12 +25,12 @@ const Talent = () => {
                             width='w-[200px]' 
                             height='h-[200px]' 
                             className='rounded-full -mt-32 border-8 border-white'
-                            img='url(/media/avatars/avatar-02.jpg)'
+                            img='url(/media/bgs/pattern-7.jpg)'
                         />
 
                         <div className="flex flex-grow justify-between items-center ml-3">
                             <div className="flex flex-col">
-                                <h4 className='font-semibold text-lg text-slate-700'>Mufaro Moyo</h4>
+                                <h4 className='font-semibold text-lg text-slate-700'>User Interface for a mobile app</h4>
                                 <div className='flex gap-5'>
                                     <span className='text-xs text-slate-400'>UX/UI</span>
                                     <span className='text-xs text-slate-400'>|</span>
@@ -42,7 +42,10 @@ const Talent = () => {
                                 </div>
                             </div>
 
-                           
+                            <Button className='bg-green-600 text-white flex gap-2'>
+                                <i className="iconly-Plus text-lg"></i>
+                                <span className='font-normal text-sm'>Apply Now</span>
+                            </Button>
                         </div>
                     </div>
 
@@ -51,6 +54,15 @@ const Talent = () => {
                         className='mt-3'
                     />
 
+                    <div className="flex justify-between py-5 pl-32 pr-10">
+                        <div className="flex gap-2 items-center">
+                            <i className="iconly-Location icbo"></i>
+                            <span className="font-semibold">Nairobi, Kenya</span>
+                        </div>
+                        <div className="text-slate-500 text-xs">
+                            Posted 5 hours ago
+                        </div>
+                    </div>
 
                 </Card>
 
@@ -74,9 +86,9 @@ const Talent = () => {
                 <SkillsCard />
 
                 <Card>
-                    <h5 className='text-green-600 font-bold'>Portfolio</h5>
+                    <h5 className='text-green-600 font-bold'>More by the Owner</h5>
                     <div className="flex gap-3 mt-3 items-center">
-                        <Avatar className='rounded-full' img='url(/media/bgs/pattern-3.jpg)'/>
+                        <Avatar className='rounded-full' img='url(/media/bgs/pattern-3.jpg)' />
                         <div className="flex flex-col">
                             <h6 className='font-medium text-sm'>Safari Website</h6>
                             <span className="text-slate-500 text-xs">UI/UX Design</span>
@@ -99,4 +111,4 @@ const Talent = () => {
     );
 };
 
-export default Talent;
+export default SingleJob;
