@@ -3,12 +3,14 @@ import React, {AllHTMLAttributes} from "react";
 
 export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
     className?: string;
+    customClass?: string;
     image?: string
     bgSize?: string
     bgPosition?: string
     bgColor?: string
     bgRepeat?: string
     borderRadius?: string
+    grow?: boolean
   }
   
   const Card = React.forwardRef<HTMLDivElement, CardProps>(
@@ -16,18 +18,24 @@ export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
       const {
         children,
         className,
+        customClass,
         image,
         bgSize,
         bgPosition,
         bgColor,
         bgRepeat,
         borderRadius,
+        grow,
         ...rest
       } = props;
   
       return (
         <div
-        className={`${borderRadius ? borderRadius : "rounded-md"}`}
+        className={clsx(`flex flex-col ${borderRadius ? borderRadius : "rounded-md"}`,
+          {
+            'grow': grow
+          }
+        )}
         style={{
                 backgroundImage: image,
                 backgroundSize: bgSize ? bgSize : '100%',
@@ -39,7 +47,8 @@ export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
                 className={clsx(`p-4 rounded-md 
                   ${bgColor ? bgColor : 'bg-white'} 
                   ${borderRadius ? borderRadius : "rounded-md"}`,
-                  className)}
+                  className
+                )}
             >
                 {children}
             </div>
