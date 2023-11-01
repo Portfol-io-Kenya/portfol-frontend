@@ -32,7 +32,7 @@ const SidebarMenu = () => {
             <SidebarMenuItem 
                 title='Scope Calc'
                 icon='iconly-Discount'
-                to={`${root}/scope-calculator`}
+                to={`${root}/reports`}
             />
         </div>
     );

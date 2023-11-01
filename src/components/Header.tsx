@@ -10,7 +10,7 @@ const MENU = [
 ]
 const Header = () => {
     return (
-        <section className="sticky top-3 bg-white/70 backdrop-blur flex py-2 px-2 rounded-md">
+        <section className="sticky top-3 bg-white/70 backdrop-blur flex py-2 px-2 rounded-md z-50">
                 {/* col 1  */}
                 <div className="flex w-full basis-4/5 items-center">
                     {/* logo */}
