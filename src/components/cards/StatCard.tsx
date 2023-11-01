@@ -3,14 +3,15 @@ import React from 'react';
 
 interface Props {
     color?: string
+    shadowColor?: string
     title: string
     value: string
 }
 
-const StatCard = ({color, title, value}: Props) => {
+const StatCard = ({color, shadowColor, title, value}: Props) => {
     return (
-        <div className={clsx(`flex flex-col grow bg-gradient-to-r py-3 px-7 rounded-md text-white shadow-lg `, 
-            'from-'+color+'-500', 'to-'+color+'-300', 'shadow'+color
+        <div className={clsx(`flex flex-col grow bg-gradient-to-r py-3 px-7 rounded-md text-white shadow-lg`, 
+        color, shadowColor
         )}>
             <span className='uppercase tracking-[4px] text-[10px]'>{title}</span>
             <h5 className='text-2xl'>{value}</h5>

@@ -27,10 +27,10 @@ const Reports = () => {
 
                     <h5 className='mt-3 text-sm text-slate-600'>Performance Overview</h5>
                     <div className="flex gap-2 pt-2 mb-3">
-                        <StatCard color='pink' title='Earnings' value='$256.12' />
-                        <StatCard color='purple' title='Views' value='$256.12' />
-                        <StatCard color='green' title='Proposals' value='$256.12' />
-                        <StatCard color='orange' title='Growth' value='$256.12' />
+                        <StatCard color='from-pink-500 to-pink-300' title='Earnings' value='$256.12' />
+                        <StatCard color='from-purple-500 to-purple-300' title='Views' value='$256.12' />
+                        <StatCard color='from-green-600 to-green-400' title='Proposals' value='$256.12' />
+                        <StatCard color='from-orange-500 to-orange-300' title='Growth' value='$256.12' />
                     </div>
 
                     <div className="flex grow gap-2">
