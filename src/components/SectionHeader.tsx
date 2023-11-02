@@ -1,16 +1,18 @@
 import React from 'react';
 import Card from './cards/Card';
+import clsx from 'clsx';
 
 interface Props {
     title?: any
     fontWeight?: string
+    className?: string
 }
 
-const SectionHeader: React.FC<Props> = ({title, fontWeight}) => {
+const SectionHeader: React.FC<Props> = ({title, fontWeight, className}) => {
     return (
         <Card 
             image='url(/media/bgs/pattern-8.jpg)'
-            className='text-white py-6'
+            className={clsx('text-white py-6', className)}
             bgColor='bg-green-600/90'
             bgSize='80%'
             bgRepeat='repeat'

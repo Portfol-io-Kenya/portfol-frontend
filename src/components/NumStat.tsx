@@ -1,17 +1,28 @@
+import clsx from 'clsx';
 import React from 'react';
 
 interface Props {
     title?: string
     value: string
     description?: string
+    className?: string
+    bgColor?: string
+    titleStyle?: string
+    textWhite?: boolean
 }
 
-const NumStat = ({title, value, description}: Props) => {
+const NumStat = ({title, value, description, className, bgColor, titleStyle, textWhite}: Props) => {
     return (
-        <div className="flex flex-col w-full bg-slate-200 p-2 rounded-md">
-            <span className='text-xs font-semibold text-slate-600'>{title}</span>
-            <h5 className='font-semibold text-2xl text-green-600'>{value}</h5>
-            <span className='text-slate-500 text-[10px]'>{description}</span>
+        <div className={clsx(`flex flex-col p-2 rounded-md`, className, bgColor, {
+            'bg-slate-300': !bgColor,
+        })}>
+            <span className={clsx('text-xs font-semibold', {
+                'text-slate-600': !textWhite
+            })}>{title}</span>
+            <h5 className={clsx(`font-semibold text-2xl text-green-600`, titleStyle)}>{value}</h5>
+            <span className={clsx('text-[10px]', {
+                'text-slate-500': !textWhite
+            })}>{description}</span>
         </div>
     );
 };

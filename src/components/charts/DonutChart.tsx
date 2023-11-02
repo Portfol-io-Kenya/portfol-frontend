@@ -1,9 +1,12 @@
 "use client"
 import { ApexOptions } from "apexcharts";
 import ApexChart from "./ApexChart";
-  
 
-const DonutChart: React.FC<ApexOptions> = () => {
+interface Props extends ApexOptions {
+    showLegend?: boolean
+}
+
+const DonutChart: React.FC<Props> = ({showLegend}) => {
     const options = {
         chart: {
             id: 'portfol-donut-chart',
@@ -15,8 +18,8 @@ const DonutChart: React.FC<ApexOptions> = () => {
             enabled: false
         },
         legend: {
-            show: false,
-            position: 'bottom',
+            show: showLegend,
+            position: 'right',
             offsetY: 0,
         },
         title: {

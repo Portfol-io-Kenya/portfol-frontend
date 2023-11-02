@@ -85,8 +85,8 @@ const Reports = () => {
 
 
                         <section className='mt-3 flex gap-3'>
-                            <NumStat title='Estimated Hours' value='20' description='at $25 an hour' />
-                            <NumStat title='Estimated Skill Index' value='5.9' description='Moderately Skilled'/>
+                            <NumStat className='w-full' title='Estimated Hours' value='20' description='at $25 an hour' />
+                            <NumStat className='w-full' title='Estimated Skill Index' value='5.9' description='Moderately Skilled'/>
                         </section>
                        
 
