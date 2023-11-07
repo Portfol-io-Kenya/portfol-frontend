@@ -15,7 +15,7 @@ export default function JobsLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className="flex flex-col w-full flex-grow">
+        <div className="flex flex-col w-full flex-grow p-3">
             {/* header  */}
             <Header />
 

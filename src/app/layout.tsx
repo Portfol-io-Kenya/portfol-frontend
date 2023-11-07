@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx('flex min-h-screen flex-col justify-between p-3', montserrat.className)}>
+      <body className={clsx('flex min-h-screen flex-col justify-between', montserrat.className)}>
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>

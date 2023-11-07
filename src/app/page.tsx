@@ -7,6 +7,6 @@ export default function Home() {
   const isAuthenticated = true;
 
   useEffect(() => {
-      isAuthenticated && router.push('/auth');
+      isAuthenticated && router.push('/auth/login');
   })
 }

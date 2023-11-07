@@ -35,28 +35,35 @@ const LoginForm = (props: FormikProps<FormValues>) => {
         {/* end::Form group */}
 
         {/* begin::Form group */}
-        <div className=''>
-            <label className='text-sm text-navy-700'>Password:</label>
-            <InputField type='password' name='password' touched={touched.password} errors={errors.password} />
+        <div className='flex gap-3'>
+            <div className="basis-1/2">
+                <label className='text-sm text-navy-700'>First Name:</label>
+                <InputField type='text' name='firstname' />
+            </div>
+
+            <div className="basis-1/2">
+                <label className='text-sm text-navy-700'>Last Name:</label>
+                <InputField type='text' name='lastname' />
+            </div>
+            
         </div>
         {/* end::Form group */}
 
-        {/* begin::Wrapper */}
-      <div className='flex flex-stack flex-wrap text-cyan-600 text-base font-semibold mb-3'>
-        <div />
+        {/* begin::Form group */}
+        <div className='flex gap-3'>
+            <div className="basis-1/2">
+                <label className='text-sm text-navy-700'>Password:</label>
+                <InputField type='text' name='firstname' touched={touched.password} errors={errors.password} />
+            </div>
 
-        {/* begin::Link */}
-        <div className="mb-4 flex items-center justify-between px-2">
-          <Link
-            href='#'
-            className="text-sm font-medium text-brand-500 hover:text-brand-600"
-          >
-            Forgot Password?
-          </Link>
+            <div className="basis-1/2">
+                <label className='text-sm text-navy-700'>Confirm Password:</label>
+                <InputField type='text' name='lastname' touched={touched.password} errors={errors.password} />
+            </div>
+            
         </div>
-        {/* end::Link */}
-      </div>
-      {/* end::Wrapper */}
+        {/* end::Form group */}
+
 
       {/* this is a temporary fake signin */}
         <button
@@ -72,9 +79,9 @@ const LoginForm = (props: FormikProps<FormValues>) => {
         </button>
 
         <div className='mt-1 text-gray-500 text-center text-sm'>
-            No account yet?{' '}
-            <Link href='/auth/signup' className='text-green-500'>
-                Sign up
+            Already have an account?{' '}
+            <Link href='/auth/login' className='text-green-500'>
+                Log in
             </Link>
         </div>
       </Form>
@@ -111,11 +118,11 @@ const FormWrapper = withFormik<MyFormProps, FormValues>({
     },
 })(LoginForm);
 
-const Login = () => {
+const IndividualSignup = () => {
     return (
         <div className='py-2'>
           <h2 className="text-center mb-3 text-lg font-bold tracking-tight text-gray-900">
-              Sign in to your account
+              Register an account 
           </h2>
 
           {/* begin::Login options */}
@@ -157,4 +164,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default IndividualSignup;
