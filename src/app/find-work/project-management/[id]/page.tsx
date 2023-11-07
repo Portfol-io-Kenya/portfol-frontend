@@ -2,7 +2,8 @@ import DotBadge from '@/components/DotBadge';
 import SectionHeader from '@/components/SectionHeader';
 import TaskHeader from '@/components/TaskHeader';
 import Button from '@/components/UI/Button';
-import TaskCard from '@/components/cards/TaskCard';
+import TaskCard from '@/components/kanban/TaskCard';
+import Kanban from '@/components/kanban/Kanban';
 import React from 'react';
 import { FiMoreHorizontal } from "react-icons/fi";
 
@@ -34,42 +35,8 @@ const SingleProject = () => {
 
                     </section>
 
-                    <div className="grid grid-cols-3 gap-3 mt-3">
-                        <div className="flex flex-col gap-2">
-                            <TaskHeader color='text-red-500' title='to do (2)' />
-                            <TaskCard
-                                title='Create Homepage' 
-                                description='Implement landing page design.'
-                                date='Fri, Jun 23'
-                                badgeColor='red'
-                                priority='High'
-                            />
-                            <TaskCard
-                                title='Find Stock Images' 
-                                description='Browse stock images online'
-                                date='Fri, Jun 23'
-                                badgeColor='green'
-                                priority='Low'
-                            />
-                        </div>
+                    <Kanban />
 
-                        <div className="flex flex-col gap-2">
-                            <TaskHeader color='text-orange-500' title='ongoing (1)' />
-                            <TaskCard
-                                title='Schedule Onboarding Meeting' 
-                                description='Plan for a Team Meeting'
-                                date='Fri, Jun 23'
-                                badgeColor='blue'
-                                priority='Medium'
-                            />
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                            <TaskHeader color='text-green-500' title='completed (0)' />
-                        </div>
-                        
-                        
-                    </div>
                 </div>
             </div>
         </div>
