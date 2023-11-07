@@ -74,7 +74,7 @@ const LoginForm = (props: FormikProps<FormValues>) => {
             disabled={isSubmitting}
         >
             <Link href='/find-work/jobs'>
-                <span className='indicator-label'>Sign In</span>
+                <span className='indicator-label'>Sign Up</span>
             </Link>
         </button>
 
