@@ -1,9 +1,12 @@
-import Image from 'next/image'
+"use client"
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Home() {
-  return (
-    <main className="">
-      Hello! I am portfol. This is the Landing Page.
-    </main>
-  )
+  const router = useRouter();
+  const isAuthenticated = true;
+
+  useEffect(() => {
+      isAuthenticated && router.push('/auth');
+  })
 }
