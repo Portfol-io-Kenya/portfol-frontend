@@ -15,19 +15,20 @@ export default function Home() {
     <>
       <div className="flex h-screen w-screen">
         <div 
-          className="basis-1/2 flex flex-col"
+          className="flex flex-col w-full h-full"
           style={{
             backgroundImage: "url(/media/bgs/portfol-landing.webp)",
-            backgroundSize: "cover"
+            backgroundSize: "cover",
+            backgroundPosition: 'center center'
           }}
         >
-
-        </div>
-        <div className="basis-1/2 flex flex-col items-center justify-center">
-          <div className="flex gap-3">
-            <Button onClick={() => router.push('/auth/login')} className='bg-gray-600 text-white px-20'>Sign In</Button>
-            <Button onClick={() => router.push('/auth/signup')} className='bg-green-600 text-white px-20'>Sign Up</Button>
+          <div className="basis-1/2 h-full flex flex-col items-center justify-center">
+            <div className="flex gap-3">
+              <Button onClick={() => router.push('/auth/login')} className='bg-gray-600 text-white px-20'>Sign In</Button>
+              <Button onClick={() => router.push('/auth/signup')} className='bg-green-600 text-white px-20'>Sign Up</Button>
+            </div>
           </div>
+
         </div>
       </div>
     </>
