@@ -22,8 +22,8 @@ export default function Home() {
             backgroundPosition: 'center center'
           }}
         >
-          <div className="basis-1/2 h-full flex flex-col items-center justify-center">
-            <div className="flex gap-3">
+          <div className="h-full flex flex-col items-center justify-center">
+            <div className="flex gap-3 pt-20">
               <Button onClick={() => router.push('/auth/login')} className='bg-gray-600 text-white px-20'>Sign In</Button>
               <Button onClick={() => router.push('/auth/signup')} className='bg-green-600 text-white px-20'>Sign Up</Button>
             </div>
