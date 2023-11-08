@@ -1,10 +1,11 @@
 import React from 'react';
 import HeaderMenu from './HeaderMenu';
 import Avatar from './UI/Avatar';
-
+import Image from 'next/image';
+import Logo from '@/public/media/portfol-logos/portfol-logo-black.png'
+import Link from 'next/link';
 const MENU = [
-    {name: 'Find Work', href: '/find-work'},
-    {name: 'Find Talent', href: '/find-work/talent'},
+    {name: 'Find Work', href: '/find-work/jobs'},
     {name: 'Proposals', href: '/find-work/proposals'},
     {name: 'Reports', href: '/find-work/reports'},
 ]
@@ -14,7 +15,14 @@ const Header = () => {
                 {/* col 1  */}
                 <div className="flex w-full basis-4/5 items-center">
                     {/* logo */}
-                    <span className="font-bold text-md mr-10">Portfol.io</span>
+                    <Link href={'/'}>
+                        <Image 
+                            src={Logo} 
+                            alt='portfol-logo' 
+                            width={100}
+                            className='mr-10'
+                        />
+                    </Link>
 
                     {/* menu  */}
                     <HeaderMenu links={MENU} />

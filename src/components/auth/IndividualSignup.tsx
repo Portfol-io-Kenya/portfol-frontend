@@ -17,6 +17,8 @@ import Image from 'next/image';
 import { toAbsoluteUrl } from '@/lib';
 import AppleLogo from '../../../public/media/svg/brand-logos/apple-black.svg'
 import GoogleLogo from '../../../public/media/svg/brand-logos/google-icon.svg'
+import { useRouter } from 'next/navigation';
+import Button from '../UI/Button';
 
 interface FormValues {
   email: string;
@@ -25,6 +27,7 @@ interface FormValues {
 
 const LoginForm = (props: FormikProps<FormValues>) => {
     const { touched, errors, isSubmitting } = props;
+    const router = useRouter();
     return (
       <Form>
         {/* begin::Form group */}
@@ -53,12 +56,12 @@ const LoginForm = (props: FormikProps<FormValues>) => {
         <div className='flex gap-3'>
             <div className="basis-1/2">
                 <label className='text-sm text-navy-700'>Password:</label>
-                <InputField type='text' name='firstname' touched={touched.password} errors={errors.password} />
+                <InputField type='password' name='password' touched={touched.password} errors={errors.password} />
             </div>
 
             <div className="basis-1/2">
                 <label className='text-sm text-navy-700'>Confirm Password:</label>
-                <InputField type='text' name='lastname' touched={touched.password} errors={errors.password} />
+                <InputField type='password' name='confirm-password' touched={touched.password} errors={errors.password} />
             </div>
             
         </div>
@@ -66,17 +69,17 @@ const LoginForm = (props: FormikProps<FormValues>) => {
 
 
       {/* this is a temporary fake signin */}
-        <button
+      <Button
             className={clsx("flex justify-center mt-2 w-full rounded-xl bg-green-600 py-[12px] text-base font-medium \
             text-white transition duration-200 hover:bg-dark active:bg-dark  \
             hover:cursor-pointer")} 
             type="submit" 
             disabled={isSubmitting}
+            onClick={() => router.push('/find-work/jobs')}
         >
-            <Link href='/find-work/jobs'>
-                <span className='indicator-label'>Sign Up</span>
-            </Link>
-        </button>
+            
+            <span className='indicator-label'>Sign Up</span>
+        </Button>
 
         <div className='mt-1 text-gray-500 text-center text-sm'>
             Already have an account?{' '}

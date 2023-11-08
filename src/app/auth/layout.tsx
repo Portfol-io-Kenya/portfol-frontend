@@ -8,15 +8,19 @@ const AuthLayout = ({
 }) => {
     return (
         <div className='flex h-screen  items-center justify-center'>
-            <div className="basis-1/2 h-full flex items-center justify-center bg-emerald-500">
-                <Card className='w-[450px]'>
+            <div 
+                className="basis-1/2 h-full flex items-center justify-center bg-gray-800"
+            >
+                <Card 
+                    className='w-[450px] rounded-lg'
+                >
                     {children}
                 </Card>
             </div>
             <div 
                 className="basis-1/2 h-full w-full"
                 style={{
-                    backgroundImage: "url(/media/bgs/portfol-logo-bg.jpg)",
+                    backgroundImage: "url(/media/portfol-logos/portfol-13.webp)",
                     backgroundSize: "cover"
                 }}
             >
