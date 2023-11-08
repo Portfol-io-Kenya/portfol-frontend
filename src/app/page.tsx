@@ -17,13 +17,13 @@ export default function Home() {
         <div 
           className="flex flex-col w-full h-full"
           style={{
-            backgroundImage: "url(/media/bgs/portfol-landing.webp)",
+            backgroundImage: "url(/media/bgs/portfolio-hero-landscape.webp)",
             backgroundSize: "cover",
             backgroundPosition: 'center center'
           }}
         >
           <div className="h-full flex flex-col items-center justify-center">
-            <div className="flex gap-3 pt-20">
+            <div className="flex gap-3 pt-40">
               <Button onClick={() => router.push('/auth/login')} className='bg-gray-600 text-white px-20'>Sign In</Button>
               <Button onClick={() => router.push('/auth/signup')} className='bg-green-600 text-white px-20'>Sign Up</Button>
             </div>
