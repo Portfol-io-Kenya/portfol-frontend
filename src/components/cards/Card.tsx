@@ -31,7 +31,7 @@ export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
   
       return (
         <div
-        className={clsx(`flex flex-col ${borderRadius ? borderRadius : "rounded-md"}`,
+        className={clsx(`flex flex-col ${borderRadius ? borderRadius : "rounded-md"}`, customClass,
           {
             'grow': grow
           }

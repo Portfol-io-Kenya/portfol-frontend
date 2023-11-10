@@ -15,7 +15,7 @@ interface Props {
 const JobCard: React.FC<Props> = ({title, location, img, description}) => {
     const pathname = usePathname()
     return (
-        <Card className='bg-white my-3 p-4 w-full'>
+        <Card className='bg-white mb-3 p-4 w-full'>
             <div className="flex">
                 {/* job random ankara avatar  */}
                 <Avatar img={img} className={'mr-5'}/>

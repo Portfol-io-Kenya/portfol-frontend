@@ -3,6 +3,7 @@ import React, { InputHTMLAttributes } from 'react';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
+  inputClass?: string;
   label?: string;
   name: string;
   error?: string;
@@ -10,7 +11,7 @@ export interface Props extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Checkbox = React.forwardRef<HTMLInputElement, Props>(
-  ({ className, label, name, error, theme = 'primary', ...rest }, ref) => {
+  ({ className, inputClass, label, name, error, theme = 'primary', ...rest }, ref) => {
     return (
       <div className={className}>
         <div className="flex items-center">
@@ -19,7 +20,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>(
             name={name}
             type="checkbox"
             ref={ref}
-            className="checkbox"
+            className={clsx("checkbox", inputClass)}
             {...rest}
           />
 
