@@ -83,8 +83,8 @@ const FilterJobs = () => {
                 />
 
                 <div className='flex justify-center gap-1 mt-8 text-xs text-slate-400'>
-                    <p>{range[0] ? `$${range[0]} - ` : '$0 - '}</p>
-                    <p>{range[1] ? `$${Number(range[1])/100*10000}` : '$1000'}</p>
+                    <p>{range[0] ? `$${Math.round(Number(range[0])/100*10000)} - ` : '$0 - '}</p>
+                    <p>{range[1] ? `$${Math.round(Number(range[1])/100*10000)}` : '$1000'}</p>
                 </div>
 
                 
