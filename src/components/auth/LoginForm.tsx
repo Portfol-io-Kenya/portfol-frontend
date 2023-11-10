@@ -5,12 +5,12 @@ import Link from 'next/link';
 import Button from '../UI/Button';
 import SocialLogin from './SocialLogin';
 import * as yup from 'yup';
-import { RegisterUserInput } from '@/types';
+import { useLogin } from '@/rest-api/auth';
+import { LoginUserInput } from '@/types';
 import Alert from '../UI/Alert';
 import Form from '../forms/form';
 import Input from '../forms/input';
 import PasswordInput from '../forms/password-input';
-import { useRegister } from '@/rest-api/auth';
 
 
 const loginSchema = yup.object().shape({
@@ -18,23 +18,15 @@ const loginSchema = yup.object().shape({
     .string()
     .email('Invalid email format')
     .required('Email is required.'),
-  firstName: yup.string().required('Firstname is required'),
-  lastName: yup.string().required('Lastname is required'),
   password: yup.string().required('Password is required'),
-  confirmPassword: yup
-    .string()
-    .oneOf([yup.ref('password')], "Passwords do not match!")
-    .required('Required!')
 });
 
-const IndividualSignup = () => {
-  const { mutate: register, isPending, formError, setFormError } = useRegister();
+const LoginForm = () => {
+  const { mutate: login, isPending, serverError, setServerError } = useLogin();
 
-  function onSubmit({ email, firstName, lastName, password }: RegisterUserInput) {
-    register({
+  function onSubmit({ email, password }: LoginUserInput) {
+    login({
       email,
-      firstName,
-      lastName,
       password,
     });
   }
@@ -42,38 +34,33 @@ const IndividualSignup = () => {
   return (
     <div className='py-2'>
           <h2 className="text-center mb-3 text-lg font-bold tracking-tight text-gray-900">
-              Register personal account.
+              Login your account.
           </h2>
-      {/* <Alert
+      <Alert
         variant="error"
-        message={formError && formError}
+        message={serverError && serverError}
         className="mb-6"
         closeable={true}
         onClose={() => setServerError(null)}
-      /> */}
+      />
       <SocialLogin />
       <Form onSubmit={onSubmit} yupSchema={loginSchema}>
         <Input name='email' label='Email' type='email' />
-        <Input name='firstName' label='First Name' type='text' className='w-1/2 float-left pr-1' />
-        <Input name='lastName' label='Last Name' type='text' className='w-1/2 float-right pl-1' />
-        <PasswordInput name='password' label='Password' className='w-1/2 float-left pr-1' />
-        <PasswordInput name='confirmPassword' label='Confirm Password' className='w-1/2 float-right pl-1'/>
-
-        
+        <PasswordInput forgotPageLink='#' name='password' label='Password'/>
         <Button
             className={clsx("flex justify-center mt-2 w-full rounded-xl bg-green-600 py-[12px] text-base font-medium \
             text-white transition duration-200 hover:bg-dark active:bg-dark  \
             hover:cursor-pointer")} 
             type="submit" 
             disabled={isPending}
-            onClick={() => setFormError(null)}
+            onClick={() => setServerError(null)}
         >
-            <span className='indicator-label'>Sign Up</span>
+            <span className='indicator-label'>Sign In</span>
         </Button>
         <div className='mt-1 text-gray-500 text-center text-sm'>
-            Already have an account?{' '}
-            <Link href='/auth/login' className='text-green-500'>
-                Log in
+            No account yet?{' '}
+            <Link href='/auth/signup' className='text-green-500'>
+                Sign Up
             </Link>
         </div>
       </Form>
@@ -82,4 +69,4 @@ const IndividualSignup = () => {
 
 }
 
-export default IndividualSignup;
+export default LoginForm;
