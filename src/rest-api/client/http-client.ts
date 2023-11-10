@@ -2,9 +2,10 @@ import type { SearchParamOptions } from '@/types';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { AUTH_TOKEN_KEY } from '@/lib/constants';
+import { useRouter } from 'next/navigation';
 
 const Axios = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: process.env.NEXT_PUBLIC_REST_API_ENDPOINT,
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
@@ -12,10 +13,12 @@ const Axios = axios.create({
 });
 
 
+
 // Change request data/error here
 Axios.interceptors.request.use(
   (config) => {
     const token = Cookies.get(AUTH_TOKEN_KEY)
+
 
     // checks if requests wants to access the logged in user's endpoint
     // else it returns the token as is

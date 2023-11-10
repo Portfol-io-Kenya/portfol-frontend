@@ -1,30 +1,36 @@
-// import {
-//     LoginUserInput,
-//     AuthResponse,
-//     User,
-//     OpportunityQueryOptions,
-//     OpportunityPaginator,
-//     Opportunity
-// } from '@/types';
-// import { API_ENDPOINTS } from './api-endpoints';
-// import { HttpClient } from './http-client';
+import {
+    LoginUserInput,
+    AuthResponse,
+    User,
+    JobQueryOptions,
+    JobPaginator,
+    Job,
+    RegisterUserInput,
+    RegisterCompanyInput
+} from '@/types';
+import { API_ENDPOINTS } from './api-endpoints';
+import { HttpClient } from './http-client';
 
-//   class Client {
-//     users = {
-//       login: (input: LoginUserInput) =>
-//         HttpClient.post<User>(API_ENDPOINTS.LOGIN_URL, input),
-//       logout: () => HttpClient.post<boolean>(API_ENDPOINTS.LOGOUT, {}),
-//     };
+class Client {
+    users = {
+      login: (input: LoginUserInput) =>
+        HttpClient.post<AuthResponse>(API_ENDPOINTS.LOGIN_URL, input),
+      logout: () => HttpClient.post<boolean>(API_ENDPOINTS.LOGOUT, {}),
+      register: (input: RegisterUserInput) =>
+        HttpClient.post<AuthResponse>(API_ENDPOINTS.REGISTER, input),
+      registerCompany: (input: RegisterCompanyInput) =>
+        HttpClient.post<AuthResponse>(API_ENDPOINTS.REGISTER_COMPANY, input),
+    };
 
-//     opportunities = {
-//       all: (params: Partial<OpportunityQueryOptions>) =>
-//         HttpClient.get<OpportunityPaginator>(
-//           API_ENDPOINTS.OPPORTUNITIES,
-//           params
-//         ),
-//       get: (profileId: string) =>
-//           HttpClient.get<Opportunity>(`${API_ENDPOINTS.OPPORTUNITIES}/myopportunities/${profileId}`),
-//     };
-// }
+    jobs = {
+      all: (params?: Partial<JobQueryOptions>) =>
+        HttpClient.get<JobPaginator>(
+          API_ENDPOINTS.JOBS,
+          params
+        ),
+      get: (profileId: string) =>
+          HttpClient.get<Job>(`${API_ENDPOINTS.OPPORTUNITIES}/myopportunities/${profileId}`),
+    };
+}
 
-// export default new Client();
+export default new Client();
