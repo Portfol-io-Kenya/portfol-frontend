@@ -9,9 +9,10 @@ interface Props {
     title: string,
     location: string,
     img?: any
+    description: string
 }
 
-const JobCard: React.FC<Props> = ({title, location, img}) => {
+const JobCard: React.FC<Props> = ({title, location, img, description}) => {
     const pathname = usePathname()
     return (
         <Card className='bg-white my-3 p-4 w-full'>
@@ -48,12 +49,7 @@ const JobCard: React.FC<Props> = ({title, location, img}) => {
             </div>
 
             <div className="text-sm text-slate-500 py-3 mb-5">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim
-                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat.
-                </p>
+                <p>{description}</p>
             </div>
 
             <div className="flex">
@@ -64,7 +60,7 @@ const JobCard: React.FC<Props> = ({title, location, img}) => {
                 <div className="basis-2/12 flex justify-between">
                     <span className='flex items-center'>
                         <i className='text-lg text-orange-300 iconly-Star icbo'></i>
-                        <text className='text-xs text-slate-500 ml-2'>5.0</text>
+                        <span className='text-xs text-slate-500 ml-2'>5.0</span>
                     </span>
 
                     <i className='text-lg text-blue-400 iconly-Shield-Done icbo'></i>

@@ -1,5 +1,10 @@
+"use client"
 import JobsHero from "@/components/JobsHero";
 import JobCard from "@/components/cards/JobCard";
+import LogoLoader from "@/components/UI/loaders/LogoLoader";
+import { useJobs } from "@/rest-api/jobs";
+import { Job } from "@/types";
+import { Suspense, useEffect, useLayoutEffect, useState } from "react";
 
 const JOBS = [
     {title: 'User Interface for a mobile app', location: 'Nairobi, Kenya', avatar: 'url(/media/bgs/pattern-7.jpg)'},
@@ -9,10 +14,22 @@ const JOBS = [
 ]
 
 export default function JobsHome () {
+    const {jobs} = useJobs();
+
     return (
         <>
             <JobsHero />
-            {JOBS.map((job, index) => <JobCard key={index} title={job.title} location={job.location} img={job.avatar} />)}
+            <Suspense fallback={<LogoLoader />}>
+                {jobs.map((job, index) => (
+                    <JobCard 
+                        key={index} 
+                        title={job.jobTitle} 
+                        location={job.location} 
+                        img={job.avatar} 
+                        description={job.detail[0].desc}
+                    />
+                ))}
+            </Suspense>
             
         </>
     )
