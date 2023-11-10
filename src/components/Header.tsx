@@ -4,12 +4,16 @@ import Avatar from './UI/Avatar';
 import Image from 'next/image';
 import Logo from '@/public/media/portfol-logos/portfol-logo-black.png'
 import Link from 'next/link';
+import AccountDropdown from './UI/dropdowns/AccountDropdown';
+
 const MENU = [
     {name: 'Find Work', href: '/find-work/jobs'},
     {name: 'Proposals', href: '/find-work/proposals'},
     {name: 'Reports', href: '/find-work/reports'},
 ]
+
 const Header = () => {
+    
     return (
         <section className="sticky top-3 bg-white/70 backdrop-blur flex py-2 px-2 rounded-md z-50">
                 {/* col 1  */}
@@ -33,10 +37,8 @@ const Header = () => {
                     {/* notifications */}
 
                     {/* avatar */}
-                    <Avatar 
-                        img={'url(/media/avatars/avatar-01.jpg)'} 
-                        className={'rounded-full mr-5'}
-                    />
+                    <AccountDropdown />
+                    
                 </div>
                 
             </section>
