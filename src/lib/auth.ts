@@ -66,8 +66,8 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   pages: {
-    signIn: "/auth/login",
-    newUser: "/find-work/jobs",
+    signIn: "/find-work/jobs",
+    newUser: "/auth/verify",
     error: "/auth/login",
   },
   callbacks: {
