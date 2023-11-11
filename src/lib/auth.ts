@@ -31,7 +31,7 @@ export const authOptions: NextAuthOptions = {
             verified: false,
             role: 'seeker',
             image: profile.picture,
-            createdAt: moment()
+            createdAt: moment().format()
           }
         }
     }),
@@ -61,7 +61,7 @@ export const authOptions: NextAuthOptions = {
             verified: false,
             role: 'seeker',
             image: profile.picture.data.url,
-            createdAt: moment()
+            createdAt: moment().format()
           }
         }
     }),
