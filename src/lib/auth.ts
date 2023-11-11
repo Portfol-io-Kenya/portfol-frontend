@@ -8,6 +8,7 @@ import dbConnect from "./dbConfig/dbConnect";
 import clientPromise from "./dbConfig/clientPromise";
 import bcrypt from "bcryptjs";
 import User from "./dbConfig/userModel";
+import moment from 'moment'
 
 export const authOptions: NextAuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
@@ -20,10 +21,49 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
         clientId: process.env.GOOGLE_ID!,
         clientSecret: process.env.GOOGLE_SECRET!,
+        profile(profile) {
+          return {
+            id: profile.sub,
+            firstName: profile.given_name,
+            lastName: profile.family_name,
+            email: profile.email,
+            accountType: 'seeker',
+            verified: false,
+            role: 'seeker',
+            image: profile.picture,
+            createdAt: moment()
+          }
+        }
     }),
     FacebookProvider({
         clientId: process.env.FACEBOOK_CLIENT_ID!,
-        clientSecret: process.env.FACEBOOK_CLIENT_SECRET!
+        clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
+        userinfo: {
+          url: "https://graph.facebook.com/me",
+          // https://developers.facebook.com/docs/graph-api/reference/user/#fields
+          params: { fields: "id,name,email,picture" },
+          async request({ tokens, client, provider }) {
+            return await client.userinfo(tokens.access_token!, {
+              // @ts-expect-error
+              params: provider.userinfo?.params,
+            })
+          },
+        },
+        // profileUrl:
+        // "https://graph.facebook.com/me?fields=id,email,first_name,last_name,picture",
+        profile(profile) {
+          return {
+            id: profile.id,
+            firstName: profile.first_name,
+            lastName: profile.last_name,
+            email: profile.email,
+            accountType: 'seeker',
+            verified: false,
+            role: 'seeker',
+            image: profile.picture.data.url,
+            createdAt: moment()
+          }
+        }
     }),
     // ...add more providers here
     CredentialsProvider({
