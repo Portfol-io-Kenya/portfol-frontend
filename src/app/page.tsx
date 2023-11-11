@@ -24,8 +24,8 @@ export default function Home() {
         >
           <div className="h-full flex flex-col items-center justify-center">
             <div className="flex gap-3 pt-40">
-              <Button onClick={() => router.push('/auth/login')} className='bg-gray-600 text-white px-20'>Sign In</Button>
-              <Button onClick={() => router.push('/auth/signup')} className='bg-green-600 text-white px-20'>Sign Up</Button>
+              <button onClick={() => router.push('/auth/login')} className='bg-gray-600 text-white px-20 h-12 rounded-md'>Sign In</button>
+              <button onClick={() => router.push('/auth/signup')} className='bg-green-600 text-white px-20 h-12 rounded-md'>Sign Up</button>
             </div>
           </div>
 
