@@ -16,33 +16,30 @@ const JobCard: React.FC<Props> = ({title, location, img, description}) => {
     const pathname = usePathname()
     return (
         <Card className='bg-white mb-3 p-4 w-full'>
-            <div className="flex flex-col md:flex-row">
-                <div className="flex md:flex-grow">
-                    {/* job random ankara avatar  */}
-                    <Avatar img={img} className={'mr-5 bg-no-repeat'}/>
+            <div className="flex">
+                {/* job random ankara avatar  */}
+                <Avatar img={img} className={'mr-5'}/>
 
-                    {/* job small details  */}
-                    <div className="flex flex-col">
-                        <h4 className='font-semibold'>
-                            <Link href={`${pathname}/1`}>
-                                {title}
-                            </Link>
-                        </h4>
-                        <div className='flex gap-1 md:gap-5'>
-                            <span className='text-xs text-slate-400'>UX/UI</span>
-                            <span className='text-xs text-slate-400'>|</span>
-                            <span className='text-xs text-slate-400'>Remote</span>
-                            <span className='text-xs text-slate-400'>|</span>
-                            <span className='text-xs text-slate-400'>$1,000</span>
-                            <span className='text-xs text-slate-400'>|</span>
-                            <span className='text-xs text-slate-400'>3 - 6 months</span>
-                        </div>
+                {/* job small details  */}
+                <div className="flex flex-col flex-grow">
+                    <h4 className='font-semibold'>
+                        <Link href={`${pathname}/1`}>
+                            {title}
+                        </Link>
+                    </h4>
+                    <div className='flex gap-5'>
+                        <span className='text-xs text-slate-400'>UX/UI</span>
+                        <span className='text-xs text-slate-400'>|</span>
+                        <span className='text-xs text-slate-400'>Remote</span>
+                        <span className='text-xs text-slate-400'>|</span>
+                        <span className='text-xs text-slate-400'>$1,000 - $1, 500</span>
+                        <span className='text-xs text-slate-400'>|</span>
+                        <span className='text-xs text-slate-400'>3 - 6 months</span>
                     </div>
-
                 </div>
 
                 {/* location  */}
-                <div className="flex flex-col md:items-end mt-2 md:mt-0">
+                <div className="flex flex-col items-end">
                     <div className="flex items-center">
                         <i className='text-lg text-slate-700 iconly-Location icbo'></i>
                         <span className='font-medium ml-4'>{location}</span>

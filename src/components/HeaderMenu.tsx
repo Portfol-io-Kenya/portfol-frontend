@@ -12,7 +12,7 @@ const HeaderMenu: React.FC<Props> = ({links}) => {
     const pathname = usePathname();
 
     return (
-        <div className='hidden md:flex gap-10'>
+        <div className='flex gap-10'>
             {links ? 
             (links.map((link: any, index: any) => {
                 const isActive = pathname === link.href;

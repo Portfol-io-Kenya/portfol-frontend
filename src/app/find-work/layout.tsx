@@ -19,12 +19,12 @@ export default function JobsLayout({
             {/* header  */}
             <Header />
 
-            <div className="flex flex-col md:flex-col flex-grow">
+            <div className="flex flex-grow">
                 {/* nav sidebar  */}
-                <SideBar className="hidden md:block" />
+                <SideBar />
 
                 {/* main content  */}
-                <section className="md:ml-3 mt-3 w-full">
+                <section className="ml-3 mt-3 w-full">
                     {children} 
                 </section>
             </div>    

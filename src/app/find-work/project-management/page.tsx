@@ -8,11 +8,11 @@ import React from 'react';
 
 const ProjectManagement = () => {
     return (
-        <div className='flex flex-col md:flex-row first-letter: gap-3'>
+        <div className='flex gap-3'>
             <div className="flex flex-col basis-3/4">
                 <SectionHeader title={'Project Management'} />
                 
-                <div className="grid md:grid-cols-2 gap-4 py-3">
+                <div className="grid grid-cols-2 gap-4 py-3">
                     <ProjectCard />
                     <ProjectCard />
                     <ProjectCard />
