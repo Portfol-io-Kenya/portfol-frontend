@@ -18,7 +18,7 @@ export default function JobsHome () {
     const {jobs} = useJobs();
 
     return (
-        <div className="flex gap-3">
+        <div className="flex flex-col md:flex-row gap-3">
             <div className="basis-3/4 flex flex-col">
                 <JobsHero />
                 <Suspense fallback={<LogoLoader />}>

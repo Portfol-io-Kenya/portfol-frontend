@@ -14,10 +14,10 @@ const SocialLogin = () => {
   }
   return (
     <div>
-      <div className='flex'>
+      <div className='flex flex-col md:flex-row'>
         <div 
           onClick={() => signIn("google", { callbackUrl })}
-          className="my-4 mr-2 flex h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-gray-100 hover:bg-gray-200 hover:cursor-pointer "
+          className="mb-2 md:my-4 mr-2 flex h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-gray-100 hover:bg-gray-200 hover:cursor-pointer "
         >
           <div className="rounded-full text-xl">
             <Image
@@ -35,7 +35,7 @@ const SocialLogin = () => {
 
         <div 
           onClick={() => signIn("facebook", { callbackUrl })}
-          className="my-4 flex h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-gray-100 hover:bg-gray-200 hover:cursor-pointer "
+          className="md:my-4 flex h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-gray-100 hover:bg-gray-200 hover:cursor-pointer "
         >
           <div className="rounded-full text-xl">
             <Image

@@ -19,21 +19,21 @@ import React from 'react';
 const Reports = () => {
     return (
         <div className='flex flex-col'>
-            <section className="flex gap-3">
+            <section className="flex flex-col md:flex-row gap-3">
 
                 {/* col 1  */}
                 <div className="basis-2/3 flex flex-col">
                     <GreetingCard />
 
                     <h5 className='mt-3 text-sm text-slate-600'>Performance Overview</h5>
-                    <div className="flex gap-2 pt-2 mb-3">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 pt-2 mb-3">
                         <StatCard color='from-pink-500 to-pink-300' title='Earnings' value='$256.12' />
                         <StatCard color='from-purple-500 to-purple-300' title='Views' value='$256.12' />
                         <StatCard color='from-green-600 to-green-400' title='Proposals' value='$256.12' />
                         <StatCard color='from-orange-500 to-orange-300' title='Growth' value='$256.12' />
                     </div>
 
-                    <div className="flex grow gap-2">
+                    <div className="flex flex-col md:flex-row grow gap-2">
                         <div className="basis-2/3 flex flex-col">
                             <Card grow className='flex flex-col grow' >
                                 <h5>Sales Overview</h5>
@@ -96,7 +96,7 @@ const Reports = () => {
                 </div>
             </section>
 
-            <section className="flex mt-3 gap-2">
+            <section className="flex flex-col md:flex-row mt-3 gap-2">
                 <div className="basis-2/5 flex flex-col">
                     <Card grow className='flex flex-col grow'>
                         <BarChart chartHeight={180} />
