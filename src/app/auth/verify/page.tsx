@@ -5,7 +5,7 @@ const Verify = () => {
     return (
         <div>
             <p className="">
-                You have successfully registered with <b>Portfol!</b> Please check
+                You have successfully registered with <b>Portfol.io!</b> Please check
                 your email inbox to verify your account.
             </p>
         </div>
