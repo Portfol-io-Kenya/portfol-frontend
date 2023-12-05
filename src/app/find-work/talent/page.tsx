@@ -7,7 +7,7 @@ import React from 'react';
 
 const Talent = () => {
     return (
-        <div className='flex gap-3'>
+        <div className='flex flex-col md:flex-row gap-3'>
             <div className="basis-3/4 flex flex-col gap-3">
                 <Card className='pt-0 px-0 pb-10'>
                     <div 

@@ -13,7 +13,7 @@ const Payments = () => {
         <div className='flex flex-col'>
             <SectionHeader title={'Payments'} className='pb-20' />
 
-            <div className="flex gap-3 px-3 -mt-16">
+            <div className="flex flex-col md:flex-row gap-3 px-3 -mt-16">
                 <div className="basis-2/3 flex flex-col gap-3">
                     <Card>
                         <h4 className='font-medium text-sm text-gray-500'>Account Balance</h4>
