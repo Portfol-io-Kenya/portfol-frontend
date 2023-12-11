@@ -19,7 +19,7 @@ export default function JobsLayout({
             {/* header  */}
             <Header />
 
-            <div className="flex flex-col md:flex-col flex-grow">
+            <div className="flex flex-col md:flex-row flex-grow">
                 {/* nav sidebar  */}
                 <SideBar className="hidden md:block" />
 
