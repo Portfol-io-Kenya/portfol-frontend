@@ -2,8 +2,10 @@
 import CountDown from '@/components/CountDown';
 import Button from '@/components/UI/Button';
 import ProjectCard from '@/components/cards/ProjectCard';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import HeroImage from '@/public/media/portfol-logos/portfol-13.webp'
 
 export default function Home() {
   const router = useRouter();
@@ -23,7 +25,14 @@ export default function Home() {
         </div>
 
         {/* col 2 */}
-        <div className="basis-1/2">image</div>
+        <div className="basis-1/2 flex items-center justify-center">
+          <Image 
+              src={HeroImage} 
+              alt='portfol-logo' 
+              width={600}
+              className='mr-10'
+          />
+        </div>
       </div>
 
       {/* value proposition */}
