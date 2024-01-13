@@ -1,78 +1,277 @@
 "use client"
-import React, { useState } from 'react';
-import { DndContext } from '@dnd-kit/core';
-import Droppable from './Droppable';
-import { kanbanData } from '@/data/fakeData';
+import { GoPlus } from "react-icons/go";
+import { useMemo, useState } from "react";
+import { Column, Id, Task } from "@/types";
+import ColumnContainer from "./ColumnContainer";
+import {
+  DndContext,
+  DragEndEvent,
+  DragOverEvent,
+  DragOverlay,
+  DragStartEvent,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import { SortableContext, arrayMove } from "@dnd-kit/sortable";
+import { createPortal } from "react-dom";
+import TaskCard from "./TaskCard";
+import { kanbanData } from "@/data/fakeData";
 
-interface Props {
-  id: string,
-  title: string,
-  description: string,
-  state: string,
-  priority: string,
-  date: string,
-  views: string
-}
+const defaultCols: Column[] = [
+  {
+    id: "todo",
+    title: "Todo",
+  },
+  {
+    id: "doing",
+    title: "In Progress",
+  },
+  {
+    id: "done",
+    title: "Done",
+  },
+];
 
-const Kanban = () => {
-  const [todoItems, setTodoItems] = useState<Array<Props>>(kanbanData);
-  const [doneItems, setDoneItems] = useState<Array<Props>>([]);
-  const [inProgressItems, setInProgressItems] = useState<Array<Props>>([]);
-  const [uItems, setuItems] = useState<Array<Props>>([]);
-  const addNewCard = ({id, title, description, state, priority, date, views}: Props) => {
-    setuItems([...uItems, { id, title, description, state, priority, date, views }]);
-  };
+const defaultTasks: Task[] = kanbanData
 
-  const handleDragEnd = (e: any) => {
-    const container = e.over?.id;
-    const id = e.active.data.current?.id ?? "";
-    const title = e.active.data.current?.title ?? "";
-    const index = e.active.data.current?.index ?? 0;
-    const parent = e.active.data.current?.parent ?? "ToDo";
-    const description = e.active.data.current?.description ?? "";
-    const date = e.active.data.current?.date ?? "";
-    const views = e.active.data.current?.views ?? "ToDo";
-    const state = e.active.data.current?.views ?? "";
-    const priority = e.active.data.current?.views ?? "";
+function KanbanBoard() {
+  const [columns, setColumns] = useState<Column[]>(defaultCols);
+  const columnsId = useMemo(() => columns.map((col) => col.id), [columns]);
 
-    if (container === "ToDo") {
-      setTodoItems([...todoItems, { id, title, description, state, priority, date, views }]);
-    } else if (container === "Done") {
-      setDoneItems([...doneItems, { id, title, description, state, priority, date, views }]);
-    } else if (container === "Unassigned") {
-      setuItems([...uItems, { id, title, description, state, priority, date, views }]);
-    } else {
-      setInProgressItems([...inProgressItems, { id, title, description, state, priority, date, views }]);
+  const [tasks, setTasks] = useState<Task[]>(defaultTasks);
+
+  const [activeColumn, setActiveColumn] = useState<Column | null>(null);
+
+  const [activeTask, setActiveTask] = useState<Task | null>(null);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 10,
+      },
+    })
+  );
+
+  return (
+    <div
+      className="
+        
+    "
+    >
+      <DndContext
+        sensors={sensors}
+        onDragStart={onDragStart}
+        onDragEnd={onDragEnd}
+        onDragOver={onDragOver}
+      >
+        <div className="flex gap-4">
+          <div className="flex gap-4">
+            <SortableContext items={columnsId}>
+              {columns.map((col) => (
+                <ColumnContainer
+                  key={col.id}
+                  column={col}
+                  deleteColumn={deleteColumn}
+                  updateColumn={updateColumn}
+                  createTask={createTask}
+                  deleteTask={deleteTask}
+                  updateTask={updateTask}
+                  updateTitle={updateTitle}
+                  tasks={tasks.filter((task) => task.columnId === col.id)}
+                />
+              ))}
+            </SortableContext>
+          </div>
+          <button
+            onClick={() => {
+              createNewColumn();
+            }}
+            className="h-[60px] w-[350px] min-w-[350px cursor-pointer rounded-lg bg-green-500
+            p-4 ring-white hover:ring-2 flex gap-2 text-white justify-center items-center font-bold"
+          >
+            <GoPlus />
+            Add Column
+          </button>
+        </div>
+
+        {createPortal(
+          <DragOverlay>
+            {activeColumn && (
+              <ColumnContainer
+                column={activeColumn}
+                deleteColumn={deleteColumn}
+                updateColumn={updateColumn}
+                createTask={createTask}
+                deleteTask={deleteTask}
+                updateTask={updateTask}
+                updateTitle={updateTitle}
+                tasks={tasks.filter(
+                  (task) => task.columnId === activeColumn.id
+                )}
+              />
+            )}
+            {activeTask && (
+              <TaskCard
+                task={activeTask}
+                deleteTask={deleteTask}
+                updateTask={updateTask}
+                updateTitle={updateTitle}
+              />
+            )}
+          </DragOverlay>,
+          document.body
+        )}
+      </DndContext>
+    </div>
+  );
+
+  function createTask(columnId: Id) {
+    const newTask: Task = {
+      id: generateId(),
+      columnId,
+      content: `Task ${tasks.length + 1}`,
+      title: 'Title'
+    };
+
+    setTasks([...tasks, newTask]);
+  }
+
+  function deleteTask(id: Id) {
+    const newTasks = tasks.filter((task) => task.id !== id);
+    setTasks(newTasks);
+  }
+
+  function updateTask(id: Id, content: string) {
+    const newTasks = tasks.map((task) => {
+      if (task.id !== id) return task;
+      return { ...task, content };
+    });
+
+    setTasks(newTasks);
+  }
+
+  function updateTitle(id: Id, title: string) {
+    const newTasks = tasks.map((task) => {
+      if (task.id !== id) return task;
+      return { ...task, title };
+    });
+
+    setTasks(newTasks);
+  }
+
+  function createNewColumn() {
+    const columnToAdd: Column = {
+      id: generateId(),
+      title: `Column ${columns.length + 1}`,
+    };
+
+    setColumns([...columns, columnToAdd]);
+  }
+
+  function deleteColumn(id: Id) {
+    const filteredColumns = columns.filter((col) => col.id !== id);
+    setColumns(filteredColumns);
+
+    const newTasks = tasks.filter((t) => t.columnId !== id);
+    setTasks(newTasks);
+  }
+
+  function updateColumn(id: Id, title: string) {
+    const newColumns = columns.map((col) => {
+      if (col.id !== id) return col;
+      return { ...col, title };
+    });
+
+    setColumns(newColumns);
+  }
+
+  function onDragStart(event: DragStartEvent) {
+    if (event.active.data.current?.type === "Column") {
+      setActiveColumn(event.active.data.current.column);
+      return;
     }
-    if (parent === "InProgress") {
-      setTodoItems([
-        ...todoItems.slice(0, index),
-        ...todoItems.slice(index + 1),
-      ]);
-    } else if (parent === "Done") {
-      setDoneItems([
-        ...doneItems.slice(0, index),
-        ...doneItems.slice(index + 1),
-      ]);
-    } else if (parent === "Unassigned") {
-      setuItems([...uItems.slice(0, index), ...uItems.slice(index + 1)]);
-    } else {
-      setInProgressItems([
-        ...inProgressItems.slice(0, index),
-        ...inProgressItems.slice(index + 1),
-      ]);
+
+    if (event.active.data.current?.type === "Task") {
+      setActiveTask(event.active.data.current.task);
+      return;
     }
   }
 
-  return (
-    <DndContext onDragEnd={handleDragEnd}>
-      <div className="grid grid-cols-3 gap-3 mt-3">
-        <Droppable id='ToDo' title='To Do' items={todoItems} />
-        <Droppable id='InProgress' title='In Progress' items={inProgressItems} />
-        <Droppable id='Done' title='Done' items={doneItems}/>
-      </div>
-    </DndContext>
-  );
-};
+  function onDragEnd(event: DragEndEvent) {
+    setActiveColumn(null);
+    setActiveTask(null);
 
-export default Kanban;
+    const { active, over } = event;
+    if (!over) return;
+
+    const activeId = active.id;
+    const overId = over.id;
+
+    if (activeId === overId) return;
+
+    const isActiveAColumn = active.data.current?.type === "Column";
+    if (!isActiveAColumn) return;
+
+    console.log("DRAG END");
+
+    setColumns((columns) => {
+      const activeColumnIndex = columns.findIndex((col) => col.id === activeId);
+
+      const overColumnIndex = columns.findIndex((col) => col.id === overId);
+
+      return arrayMove(columns, activeColumnIndex, overColumnIndex);
+    });
+  }
+
+  function onDragOver(event: DragOverEvent) {
+    const { active, over } = event;
+    if (!over) return;
+
+    const activeId = active.id;
+    const overId = over.id;
+
+    if (activeId === overId) return;
+
+    const isActiveATask = active.data.current?.type === "Task";
+    const isOverATask = over.data.current?.type === "Task";
+
+    if (!isActiveATask) return;
+
+    // Im dropping a Task over another Task
+    if (isActiveATask && isOverATask) {
+      setTasks((tasks) => {
+        const activeIndex = tasks.findIndex((t) => t.id === activeId);
+        const overIndex = tasks.findIndex((t) => t.id === overId);
+
+        if (tasks[activeIndex].columnId != tasks[overIndex].columnId) {
+          // Fix introduced after video recording
+          tasks[activeIndex].columnId = tasks[overIndex].columnId;
+          return arrayMove(tasks, activeIndex, overIndex - 1);
+        }
+
+        return arrayMove(tasks, activeIndex, overIndex);
+      });
+    }
+
+    const isOverAColumn = over.data.current?.type === "Column";
+
+    // Im dropping a Task over a column
+    if (isActiveATask && isOverAColumn) {
+      setTasks((tasks) => {
+        const activeIndex = tasks.findIndex((t) => t.id === activeId);
+
+        tasks[activeIndex].columnId = overId;
+        // console.log("DROPPING TASK OVER COLUMN", { activeIndex });
+        return arrayMove(tasks, activeIndex, activeIndex);
+      });
+    }
+  }
+}
+
+function generateId() {
+  /* Generate a random number between 0 and 10000 */
+  return Math.floor(Math.random() * 10001);
+}
+
+export default KanbanBoard;

@@ -9,7 +9,7 @@ interface Props {
 const SideBar = ({className}: Props) => {
     return (
         <section 
-            className={clsx("sticky top-[90px] h-[calc(100vh-100px)] flex flex-col justify-center w-[7%] p-2 rounded-md bg-white", className)}
+            className={clsx("sticky top-[90px] h-[calc(100vh-100px)] flex flex-col justify-center w-[7%] min-w-[7%] p-2 rounded-md bg-white", className)}
         >
             <SidebarMenu />
         </section>

@@ -20,7 +20,7 @@ const SingleProject = () => {
                 {/* container  */}
                 <div className="p-4 bg-gradient-to-br from-slate-200 to-transparent rounded">
 
-                    <section className="flex justify-between ">
+                    <section className="flex justify-between mb-3">
                         {/* greeting */}
                         <div className="">
                             <h3 className='text-xl'>Welcome back <b>Simba!</b></h3>
@@ -28,10 +28,10 @@ const SingleProject = () => {
                         </div>
 
                         {/* task btn  */}
-                        <Button className='bg-green-600 text-white flex gap-2'>
+                        {/* <Button className='bg-green-600 text-white flex gap-2'>
                             <i className="iconly-Plus text-lg"></i>
                             <span className='font-normal text-sm'>Create New Task</span>
-                        </Button>
+                        </Button> */}
 
                     </section>
 

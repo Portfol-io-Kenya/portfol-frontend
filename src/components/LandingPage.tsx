@@ -4,7 +4,7 @@ import Button from '@/components/UI/Button';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
-export default function Home() {
+export default function LandingPage() {
   const router = useRouter();
   const isAuthenticated = true;
   const date = (new Date("01/02/2024 00:00:00")).getTime()

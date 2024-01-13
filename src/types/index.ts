@@ -148,6 +148,23 @@ export type Job = {
   __v: number
 }
 
+export type Id = string | number;
+
+export type Column = {
+  id: Id;
+  title: string;
+};
+
+export type Task = {
+  id: Id;
+  columnId: Id;
+  content: string;
+  title?: string
+  priority?: string
+  date?: string
+  views?: number
+};
+
 
 export interface UserPaginator extends PaginatorInfo<User> {}
 export interface JobPaginator extends PaginatorInfo<Job> {}
