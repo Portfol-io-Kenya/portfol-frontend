@@ -5,7 +5,7 @@ import ProjectCard from '@/components/cards/ProjectCard';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import HeroImage from '@/public/media/portfol-logos/portfol-13.webp'
+import HeroImage from '@/public/media/bgs/africa-map.png'
 
 export default function Home() {
   const router = useRouter();
@@ -15,13 +15,21 @@ export default function Home() {
   return ( 
     <>
       {/* hero */}
-      <div className="flex min-h-[80vh]">
+      <div 
+        className=""
+        style={{
+          backgroundImage: "url(/media/bgs/africa-bg.webp)",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed"
+        }}
+      >
+        <div className="bg-white/70 flex min-h-[80vh]">
         {/* col 1 */}
-        <div className="flex flex-col basis-1/2 px-20 justify-center">
+        <div className="flex flex-col basis-1/2 px-20 justify-center items-end">
           <h1 className='text-5xl'>
             Discover the  <br/><b>Power</b> of <br/><i>African Talent!</i>
           </h1>
-          <Button className='bg-white w-36 mt-4'>Click</Button>
+          <Button onClick={() => router.push('/auth/login')} className='bg-yellow-900 text-white w-36 mt-4'>Get Started</Button>
         </div>
 
         {/* col 2 */}
@@ -36,7 +44,7 @@ export default function Home() {
       </div>
 
       {/* value proposition */}
-      <div className="flex bg-slate-200 items-center justify-center py-48 px-32">
+      <div className="flex bg-yellow-900 text-white items-center justify-center py-48 px-32">
         <span className='text-center text-4xl leading-relaxed'>
           At <b>Portfolio</b>, we bridge the gap between talent and opportunity. Explore a world of 
           skilled African freelancers ready to bring your projects to life. Join us in reshaping the 
@@ -55,12 +63,21 @@ export default function Home() {
       </div>
 
       {/* auth cta  */}
-      <div className="flex flex-col bg-black p-20 items-center">
-        <h4 className='text-2xl text-white font-semibold'>Ready to Elevate Your Projects?</h4>
-        <div className="flex gap-2 justify-center">
-          <Button className='bg-white w-36 mt-4'>Join Now</Button>
-          <Button className='bg-white w-36 mt-4'>Login</Button>
+      <div 
+        className=""
+        style={{
+          backgroundImage: "url(/media/bgs/pattern-3.jpg)",
+          // backgroundSize: "cover",
+        }}
+      >
+        <div className="flex flex-col bg-black/80 p-20 items-center">
+          <h4 className='text-2xl text-white font-semibold'>Ready to Elevate Your Projects?</h4>
+          <div className="flex gap-2 justify-center">
+            <Button onClick={() => router.push('/auth/signup')} className='bg-white w-36 mt-4'>Join Now</Button>
+            <Button onClick={() => router.push('/auth/login')} className='bg-white w-36 mt-4'>Login</Button>
+          </div>
         </div>
+      </div>
       </div>
     </>
   )
