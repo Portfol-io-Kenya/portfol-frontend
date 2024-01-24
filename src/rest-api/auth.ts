@@ -59,7 +59,7 @@ export function useLogout() {
       if (data) {
         setToken('');
         setAuthorized(false);
-        toast.error('You are now logged out!', {autoClose: 3500, position: 'top-center'})
+        toast.error('You are being logged out!', {autoClose: 3500, position: 'top-center'})
       }
     },
     onSettled: () => {

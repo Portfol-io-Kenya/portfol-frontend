@@ -16,7 +16,7 @@ const AccountDropdown = () => {
             onClick: () => {
                 // router.push('/auth/login')
                 signOut({ callbackUrl: '/auth/login' })
-                toast.error('You are now logged out!', {autoClose: 3500, position: 'top-center'})
+                toast.error('You are being logged out!', {autoClose: 3500, position: 'top-center'})
             }, 
             icon: <FiLogOut /> }
     ]
