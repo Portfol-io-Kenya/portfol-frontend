@@ -28,7 +28,7 @@ export const authOptions: NextAuthOptions = {
             lastName: profile.family_name,
             email: profile.email,
             accountType: 'seeker',
-            verified: false,
+            verified: true,
             role: 'seeker',
             image: profile.picture,
             createdAt: moment().format()
@@ -58,7 +58,7 @@ export const authOptions: NextAuthOptions = {
             lastName: profile.last_name,
             email: profile.email,
             accountType: 'seeker',
-            verified: false,
+            verified: true,
             role: 'seeker',
             image: profile.picture.data.url,
             createdAt: moment().format()
@@ -107,7 +107,7 @@ export const authOptions: NextAuthOptions = {
   ],
   pages: {
     signIn: "/find-work/jobs",
-    newUser: "/auth/verify",
+    newUser: "/find-work/jobs",
     error: "/auth/login",
   },
   callbacks: {
