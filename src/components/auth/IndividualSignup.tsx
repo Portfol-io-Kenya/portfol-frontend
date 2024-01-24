@@ -11,6 +11,9 @@ import Form from '../forms/form';
 import Input from '../forms/input';
 import PasswordInput from '../forms/password-input';
 import { useRegister } from '@/rest-api/auth';
+import YupPassword from 'yup-password'
+
+YupPassword(yup) // extend yup
 
 
 const loginSchema = yup.object().shape({
@@ -20,7 +23,12 @@ const loginSchema = yup.object().shape({
     .required('Email is required.'),
   firstName: yup.string().required('Firstname is required'),
   lastName: yup.string().required('Lastname is required'),
-  password: yup.string().required('Password is required'),
+  password: yup
+    .string().required('Password is required')
+    .min(8, 'Password should be 8 characters or more with at least 1 number and 1 uppercase letter.')
+    .minNumbers(1, 'password must contain at least 1 number')
+    .minUppercase(1, 'password must contain at least 1 uppercase letter')
+    .minSymbols(0),
   confirmPassword: yup
     .string()
     .oneOf([yup.ref('password')], "Passwords do not match!")
