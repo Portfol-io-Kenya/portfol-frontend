@@ -37,7 +37,7 @@ const WebsiteHeader = () => {
                 <HeaderMenu links={MENU} />
             </div>
             <div className="basis-1/5 flex flex-col md:flex-row gap-3">
-              <Button onClick={() => router.push('/auth/login')} className='px-16 bg-afrogreen text-neutral'>
+              <Button onClick={() => router.push('/auth/login')} className='px-16 bg-primary text-neutral'>
                 Login | Signup
             </Button>
             </div>
