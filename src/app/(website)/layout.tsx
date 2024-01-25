@@ -17,7 +17,7 @@ export default function WebsiteLayout({
 }) {
     return (
         <div className="flex flex-col">
-            <div className="p-3 bg-white">
+            <div className="p-3 bg-white drop-shadow">
                 <WebsiteHeader />
             </div>
             {children}   

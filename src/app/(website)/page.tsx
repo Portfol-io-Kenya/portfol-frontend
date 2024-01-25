@@ -54,7 +54,7 @@ export default function Home() {
 
       {/* featured jobs */}
       <div className="flex flex-col items-center p-20">
-        <h3 className='text-2xl font-bold'>Featured Jobs</h3>
+        <h3 className='text-2xl font-bold'>Platform Features</h3>
         <div className="mt-10 grid grid-cols-3 gap-3">
           <ProjectCard />
           <ProjectCard />
