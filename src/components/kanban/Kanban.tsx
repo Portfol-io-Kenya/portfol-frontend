@@ -87,8 +87,8 @@ function KanbanBoard() {
             onClick={() => {
               createNewColumn();
             }}
-            className="h-[60px] w-[350px] min-w-[350px cursor-pointer rounded-lg bg-green-500
-            p-4 ring-white hover:ring-2 flex gap-2 text-white justify-center items-center font-bold"
+            className="h-[60px] w-[350px] min-w-[350px cursor-pointer rounded-lg bg-afrogreen
+            p-4 ring-white hover:ring-2 flex gap-2 text-neutral justify-center items-center font-bold"
           >
             <GoPlus />
             Add Column

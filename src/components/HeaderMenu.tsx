@@ -22,7 +22,7 @@ const HeaderMenu: React.FC<Props> = ({links}) => {
                         href={link.href} 
                         className={clsx("text-sm flex",{
                             "text-slate-600": !isActive,
-                            "text-green-600 font-[600]": isActive,
+                            "text-afrogreen font-[600]": isActive,
                         })}
                     >
                         {link.name}

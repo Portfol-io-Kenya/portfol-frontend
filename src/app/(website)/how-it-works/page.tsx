@@ -36,13 +36,13 @@ const HowItWorksPage = () => {
             {/* security highlights */}
             <div className="flex py-20 px-20 bg-black">
                 <div className="flex items-center">
-                    <h4 className='text-white text-3xl'>
+                    <h4 className='text-neutral text-3xl'>
                         Your Security, <b>Our Priority.</b> 
                     </h4>
                 </div>
                 
                 <div className="flex flex-col">
-                    <p className='text-xl text-white'>
+                    <p className='text-xl text-neutral'>
                         Discover the peace of mind that comes with our secure and user-friendly environment.
                     </p>
                     <Button className='bg-white w-36 mt-4'>Join Now</Button>

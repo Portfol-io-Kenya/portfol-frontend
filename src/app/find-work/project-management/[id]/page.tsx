@@ -28,7 +28,7 @@ const SingleProject = () => {
                         </div>
 
                         {/* task btn  */}
-                        {/* <Button className='bg-green-600 text-white flex gap-2'>
+                        {/* <Button className='bg-afrogreen text-neutral flex gap-2'>
                             <i className="iconly-Plus text-lg"></i>
                             <span className='font-normal text-sm'>Create New Task</span>
                         </Button> */}

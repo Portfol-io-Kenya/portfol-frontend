@@ -22,13 +22,13 @@ const SidebarMenuItem: React.FC<Props> = ({to, title, icon}) => {
                         className={
                             clsx("cursor-pointer items-center", 
                             {
-                                'text-white': isActive,
+                                'text-neutral': isActive,
                             })}
                     >
                         <div className={clsx("flex flex-col items-center",
                             {
                                 "text-slate-400": !isActive,
-                                "text-green-600": isActive,
+                                "text-afrogreen": isActive,
                             }
                         )}>
                             <i className={clsx(icon, 'p-2 rounded-lg text-xl icbo')}

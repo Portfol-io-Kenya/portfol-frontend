@@ -10,7 +10,7 @@ interface Props {
 const NumberCard: React.FC<Props> = ({className, applications}) => {
     return (
         <Card 
-            className={clsx("bg-gradient-to-br from-green-500 to-black flex flex-col justify-between text-white w-full",
+            className={clsx("bg-gradient-to-br from-green-500 to-black flex flex-col justify-between text-neutral w-full",
                         className
                     )}>
             <h4>Applications</h4>

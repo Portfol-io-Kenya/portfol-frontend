@@ -11,7 +11,7 @@ const ClientsPage = () => {
                     Create a client account, share <i>project details,</i> <br /> and connect with 
                     the <u><b>perfect freelancer.</b></u> 
                 </h2>  
-                <Button className='bg-black text-white w-36 mt-4'>Join Now</Button>
+                <Button className='bg-black text-neutral w-36 mt-4'>Join Now</Button>
             </div>
 
             {/* job posting */}

@@ -9,7 +9,7 @@ const BankCard = () => {
                 <p className='text-lg ml-2'> 3248</p>
             </div>
 
-            <div className="flex justify-between text-white/70 text-[16px]">
+            <div className="flex justify-between text-neutral/70 text-[16px]">
                 <span>Simba Zulu</span>
                 <span>05/27</span>
             </div>

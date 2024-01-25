@@ -6,8 +6,8 @@ const JobsHero = () => {
     return (
         <Card
             image='url(/media/bgs/pattern-1.jpg)'
-            className='text-white py-6 px-7'
-            bgColor='bg-green-600/90'
+            className='text-neutral py-6 px-7'
+            bgColor='bg-afrogreen/90'
             customClass='mb-3'
         >
             <h2 className="text-xl"><b>Welcome!</b> Looking for your next <b>project?</b></h2>

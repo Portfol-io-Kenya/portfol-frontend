@@ -29,7 +29,7 @@ const ProjectManagement = () => {
 
                     <div className="grid grid-cols-2 gap-2">
                         <StatPill title='Total Projects' color='bg-blue-500' num='3' />
-                        <StatPill title='Completed' color='bg-green-500' num='0' />
+                        <StatPill title='Completed' color='bg-afrogreen' num='0' />
                         <StatPill title='Ongoing' color='bg-orange-500' num='2' />
                         <StatPill title='Out Of Schedule' color='bg-red-500' num='1' />
                     </div>

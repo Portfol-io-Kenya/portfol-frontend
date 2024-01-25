@@ -13,7 +13,7 @@ const ITEMS = ['Individual', 'Company']
 const SignupPage = () => {
     return (
         <Tab.Group>
-            <Tab.List className="flex space-x-1 rounded-xl bg-green-600/20 p-1">
+            <Tab.List className="flex space-x-1 rounded-xl bg-afrogreen/20 p-1">
                 {ITEMS.map((item, index)=> (
                     <Tab 
                         key={index}

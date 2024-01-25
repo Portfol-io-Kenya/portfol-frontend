@@ -17,7 +17,7 @@ const Badge = ({color, title, bgColor, textColor}: Props) => {
                 'bg-opacity-20': !bgColor,  
                 'bg-red-500 text-red-500': title === "High" && !color,          
                 'bg-blue-500 text-blue-500': title === "Medium" && !color,          
-                'bg-green-500 text-green-500': title === "Low" && !color,          
+                'bg-afrogreen text-afrogreen': title === "Low" && !color,          
             }
         )}>
             <span className={`text-${color}-500 ${textColor}`}>{title}</span>

@@ -30,7 +30,7 @@ const TaskHeader: React.FC<Props> = (
             <DotBadge className={clsx({
                 'text-red-500': column.title === "Todo",
                 'text-orange-400': column.title === "In Progress",
-                'text-green-500': column.title === "Done",
+                'text-afrogreen': column.title === "Done",
             })}  />
           {!editMode && <span className='uppercase tracking-[.5em] text-sm'>{column.title}</span>}
           {editMode && (

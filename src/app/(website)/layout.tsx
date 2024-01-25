@@ -21,7 +21,7 @@ export default function WebsiteLayout({
                 <WebsiteHeader />
             </div>
             {children}   
-            <div className="bg-black text-white text-sm p-4 flex justify-center gap-4">
+            <div className="bg-black text-neutral text-sm p-4 flex justify-center gap-4">
                 <Link href="#">Privacy Policy</Link>
                 <Link href="#">Support & FAQs</Link>
                 <Link href="#">Safety & Security</Link>

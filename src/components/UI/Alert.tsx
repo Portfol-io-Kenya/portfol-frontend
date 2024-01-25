@@ -25,7 +25,7 @@ const variantClasses = {
   infoOutline: 'border border-blue-200 text-blue-600',
   warningOutline: 'border border-yellow-200 text-yellow-600',
   errorOutline: 'border border-red-200 text-red-600',
-  successOutline: 'border border-green-200 text-green-600',
+  successOutline: 'border border-green-200 text-afrogreen',
 };
 
 const Alert: React.FC<AlertProps> = ({

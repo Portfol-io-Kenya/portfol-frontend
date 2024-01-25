@@ -57,7 +57,7 @@ const JobCard: React.FC<Props> = ({title, location, img, description}) => {
 
             <div className="flex">
                 <div className="basis-10/12">
-                    <i className='text-lg text-green-600 iconly-Bookmark icbo'></i>
+                    <i className='text-lg text-afrogreen iconly-Bookmark icbo'></i>
                 </div>
 
                 <div className="basis-2/12 flex justify-between">

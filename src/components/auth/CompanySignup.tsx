@@ -63,8 +63,8 @@ const CompanySignup = () => {
         <PasswordInput name='confirmPassword' label='Confirm Password' className='w-1/2 float-right pl-2' />
 
         <Button
-            className={clsx("flex justify-center mt-2 w-full rounded-xl bg-green-600 py-[12px] text-base font-medium \
-            text-white transition duration-200 hover:bg-dark active:bg-dark  \
+            className={clsx("flex justify-center mt-2 w-full rounded-xl bg-afrogreen py-[12px] text-base font-medium \
+            text-neutral transition duration-200 hover:bg-dark active:bg-dark  \
             hover:cursor-pointer")} 
             type="submit" 
             disabled={isPending}
@@ -74,7 +74,7 @@ const CompanySignup = () => {
         </Button>
         <div className='mt-1 text-gray-500 text-center text-sm'>
             Already have an account?{' '}
-            <Link href='/auth/login' className='text-green-500'>
+            <Link href='/auth/login' className='text-afrogreen'>
                 Log in
             </Link>
         </div>

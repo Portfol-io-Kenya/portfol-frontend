@@ -48,8 +48,8 @@ const LoginForm = () => {
         <Input name='email' label='Email' type='email' />
         <PasswordInput forgotPageLink='#' name='password' label='Password'/>
         <Button
-            className={clsx("flex justify-center mt-2 w-full rounded-xl bg-green-600 py-[12px] text-base font-medium \
-            text-white transition duration-200 hover:bg-dark active:bg-dark  \
+            className={clsx("flex justify-center mt-2 w-full rounded-xl bg-afrogreen py-[12px] text-base font-medium \
+            text-neutral transition duration-200 hover:bg-dark active:bg-dark  \
             hover:cursor-pointer")} 
             type="submit" 
             disabled={isPending}
@@ -59,7 +59,7 @@ const LoginForm = () => {
         </Button>
         <div className='mt-1 text-gray-500 text-center text-sm'>
             No account yet?{' '}
-            <Link href='/auth/signup' className='text-green-500'>
+            <Link href='/auth/signup' className='text-afrogreen'>
                 Sign Up
             </Link>
         </div>

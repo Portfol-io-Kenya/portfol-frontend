@@ -42,7 +42,7 @@ const SingleJob = () => {
                                 </div>
                             </div>
 
-                            <Button className='bg-green-600 text-white flex gap-2'>
+                            <Button className='bg-afrogreen text-neutral flex gap-2'>
                                 <i className="iconly-Plus text-lg"></i>
                                 <span className='font-normal text-sm'>Apply Now</span>
                             </Button>
@@ -67,7 +67,7 @@ const SingleJob = () => {
                 </Card>
 
                 <Card>
-                    <h4 className='text-xl text-green-600 font-semibold mb-3'>Project Description</h4>
+                    <h4 className='text-xl text-afrogreen font-semibold mb-3'>Project Description</h4>
                     <p className="text-slate-500 text-sm">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -86,7 +86,7 @@ const SingleJob = () => {
                 <SkillsCard />
 
                 <Card>
-                    <h5 className='text-green-600 font-bold'>More by the Owner</h5>
+                    <h5 className='text-afrogreen font-bold'>More by the Owner</h5>
                     <div className="flex gap-3 mt-3 items-center">
                         <Avatar className='rounded-full' img='url(/media/bgs/pattern-3.jpg)' />
                         <div className="flex flex-col">
@@ -98,7 +98,7 @@ const SingleJob = () => {
                     <Divider className='bg-slate-300 mt-3 mb-4' />
 
                     <div className="flex justify-center">
-                        <Button className='text-green-600 place-self-center'>
+                        <Button className='text-afrogreen place-self-center'>
                             <span className='text-xs'>View All</span>
                             <i className='iconly-Arrow-Right ml-2'></i>
                         </Button>

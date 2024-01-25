@@ -10,7 +10,7 @@ interface Props {
 
 const StatCard = ({color, shadowColor, title, value}: Props) => {
     return (
-        <div className={clsx(`flex flex-col grow bg-gradient-to-r py-3 px-7 rounded-md text-white shadow-lg`, 
+        <div className={clsx(`flex flex-col grow bg-gradient-to-r py-3 px-7 rounded-md text-neutral shadow-lg`, 
         color, shadowColor
         )}>
             <span className='uppercase tracking-[4px] text-[10px]'>{title}</span>

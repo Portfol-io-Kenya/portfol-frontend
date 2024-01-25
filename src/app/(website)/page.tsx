@@ -29,7 +29,7 @@ export default function Home() {
           <h1 className='text-5xl'>
             Discover the  <br/><b>Power</b> of <br/><i>African Talent!</i>
           </h1>
-          <Button onClick={() => router.push('/auth/login')} className='bg-yellow-900 text-white w-36 mt-4'>Get Started</Button>
+          <Button onClick={() => router.push('/auth/login')} className='bg-yellow-900 text-neutral w-36 mt-4'>Get Started</Button>
         </div>
 
         {/* col 2 */}
@@ -44,7 +44,7 @@ export default function Home() {
       </div>
 
       {/* value proposition */}
-      <div className="flex bg-yellow-900 text-white items-center justify-center py-48 px-32">
+      <div className="flex bg-yellow-900 text-neutral items-center justify-center py-48 px-32">
         <span className='text-center text-4xl leading-relaxed'>
           At <b>Portfolio</b>, we bridge the gap between talent and opportunity. Explore a world of 
           skilled African freelancers ready to bring your projects to life. Join us in reshaping the 
@@ -71,7 +71,7 @@ export default function Home() {
         }}
       >
         <div className="flex flex-col bg-black/80 p-20 items-center">
-          <h4 className='text-2xl text-white font-semibold'>Ready to Elevate Your Projects?</h4>
+          <h4 className='text-2xl text-neutral font-semibold'>Ready to Elevate Your Projects?</h4>
           <div className="flex gap-2 justify-center">
             <Button onClick={() => router.push('/auth/signup')} className='bg-white w-36 mt-4'>Join Now</Button>
             <Button onClick={() => router.push('/auth/login')} className='bg-white w-36 mt-4'>Login</Button>

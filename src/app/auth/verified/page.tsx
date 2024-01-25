@@ -15,8 +15,8 @@ const Verified = () => {
             </p>
 
             <Button
-                className="flex justify-center mt-2 w-full rounded-xl bg-green-600 py-[12px] text-base font-medium \
-                text-white transition duration-200 hover:bg-dark active:bg-dark  \
+                className="flex justify-center mt-2 w-full rounded-xl bg-afrogreen py-[12px] text-base font-medium \
+                text-neutral transition duration-200 hover:bg-dark active:bg-dark  \
                 hover:cursor-pointer"
             >
                 <Link href='/find-work/jobs' className='indicator-label'>Explore Opportunities</Link>

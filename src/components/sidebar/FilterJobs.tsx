@@ -49,7 +49,7 @@ const FilterJobs = () => {
                         key={skill.id} 
                         name={skill.name} 
                         label={skill.name} 
-                        inputClass='mr-2 accent-green-600 bg-green-500 text-white rounded-lg'
+                        inputClass='mr-2 accent-green-600 bg-afrogreen text-neutral rounded-lg'
                     />
                 ))}
 
@@ -60,7 +60,7 @@ const FilterJobs = () => {
                         key={item.id} 
                         name={item.name} 
                         label={item.name} 
-                        inputClass='mr-2 accent-green-600 bg-green-500 text-white rounded-lg'
+                        inputClass='mr-2 accent-green-600 bg-afrogreen text-neutral rounded-lg'
                     />
                 ))}
 
@@ -71,7 +71,7 @@ const FilterJobs = () => {
                         key={item.id} 
                         name={item.name} 
                         label={item.name} 
-                        inputClass='mr-2 accent-green-600 bg-green-500 text-white rounded-lg'
+                        inputClass='mr-2 accent-green-600 bg-afrogreen text-neutral rounded-lg'
                     />
                 ))}
                 <RangeSlider 

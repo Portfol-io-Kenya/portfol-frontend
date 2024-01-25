@@ -12,8 +12,8 @@ const SectionHeader: React.FC<Props> = ({title, fontWeight, className}) => {
     return (
         <Card 
             image='url(/media/bgs/pattern-8.jpg)'
-            className={clsx('text-white py-6', className)}
-            bgColor='bg-green-600/90'
+            className={clsx('text-neutral py-6', className)}
+            bgColor='bg-afrogreen/90'
             bgSize='80%'
             bgRepeat='repeat'
         >

@@ -19,7 +19,7 @@ const NumStat = ({title, value, description, className, bgColor, titleStyle, tex
             <span className={clsx('text-xs font-semibold', {
                 'text-slate-600': !textWhite
             })}>{title}</span>
-            <h5 className={clsx(`font-semibold text-2xl text-green-600`, titleStyle)}>{value}</h5>
+            <h5 className={clsx(`font-semibold text-2xl text-afrogreen`, titleStyle)}>{value}</h5>
             <span className={clsx('text-[10px]', {
                 'text-slate-500': !textWhite
             })}>{description}</span>

@@ -19,7 +19,7 @@ const ChatControls: React.FC<Props> = ({handleSubmit, handleChange, value}) => {
                     placeholder='Type your message here...'
                 />
 
-                <Button type='submit' className='bg-green-500 text-white'>
+                <Button type='submit' className='bg-afrogreen text-neutral'>
                     <span>Send</span>
                     <i className="iconly-Send icli text-lg ml-1"></i>
                 </Button>

@@ -18,6 +18,11 @@ const config: Config = {
         'secondary': '#7c711a',
         'accent': '#f78011',
         'neutral': '#fce4c6',
+        'afrogreen': '#2C6E63',
+        'afrobrown': '#561217',
+        'afroorange': '#F38218',
+        'afroyellow': '#F8B735',
+        'afrocream,': '#FBE5B6',
       }
     },
     

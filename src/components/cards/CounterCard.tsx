@@ -24,14 +24,14 @@ type Props = {
         >
             <div className='flex justify-between items-stretch flex-wrap pt-5'>
                 <div className='flex flex-col'>
-                    <span className='text-[24px] font-semibold text-white mr-2'>{count}</span>
+                    <span className='text-[24px] font-semibold text-neutral mr-2'>{count}</span>
         
-                    <span className='text-white/70 pt-1 text-sm'>{description}</span>
+                    <span className='text-neutral/70 pt-1 text-sm'>{description}</span>
                 </div>
             </div>
             <div className='flex items-end py-5'>
                 <div className='flex items-center flex-col mt-3 w-full'>
-                    <div className='flex justify-between text-xs text-white opacity-75 w-full mt-auto mb-2'>
+                    <div className='flex justify-between text-xs text-neutral opacity-75 w-full mt-auto mb-2'>
                     <span>{count-(count/2)} Done</span>
                     <span>{`${Math.round(((count-(count/2))/count)*100)}%`}</span>
                     </div>

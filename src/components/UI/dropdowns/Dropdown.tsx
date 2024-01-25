@@ -33,7 +33,7 @@ export default function Dropdown({button, menu}:Props) {
                     {({ active }) => (
                         <button
                             className={`${
-                            active ? 'bg-green-500 text-white' : 'text-green-600'
+                            active ? 'bg-afrogreen text-neutral' : 'text-afrogreen'
                             } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                             onClick={item.onClick && item.onClick}
                         >

@@ -11,7 +11,7 @@ interface Props {
 
 const classes = {
     root: 'flex flex-col items-center justify-center',
-    dark: 'bg-gray-700/95 text-white border border-white/20',
+    dark: 'bg-gray-700/95 text-neutral border border-white/20',
     light: 'bg-white text-black',
     small: 'p-2 rounded',
     medium: 'w-32 h-32 rounded-lg',

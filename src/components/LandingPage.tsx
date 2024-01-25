@@ -28,8 +28,8 @@ export default function LandingPage() {
           <div className="h-full flex flex-col items-center justify-center md:justify-end  backdrop-blur-sm md:backdrop-blur-none">
 
             <div className="flex flex-col md:flex-row gap-3 md:pt-40">
-              <button onClick={() => router.push('/auth/login')} className='bg-gray-600 text-white px-20 h-12 rounded-md'>Sign In</button>
-              <button onClick={() => router.push('/auth/signup')} className='bg-green-600 text-white px-20 h-12 rounded-md'>Sign Up</button>
+              <button onClick={() => router.push('/auth/login')} className='bg-gray-600 text-neutral px-20 h-12 rounded-md'>Sign In</button>
+              <button onClick={() => router.push('/auth/signup')} className='bg-afrogreen text-neutral px-20 h-12 rounded-md'>Sign Up</button>
             </div>
 
             <div className="pt-16 md:pt-6 md:pb-12">

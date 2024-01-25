@@ -29,7 +29,7 @@ const Chat = () => {
                     <Avatar className='rounded-full' height='h-[40px]' width='w-[40px]' />
                     <div className="flex flex-col ">
                         <h5 className='font-semibold text-sm'>Khanyi Kigali</h5>
-                        <span className='text-green-500 text-xs'>Online</span>
+                        <span className='text-afrogreen text-xs'>Online</span>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@ const Chat = () => {
                     <ChatMessage 
                         text={'Absolutely! I can do it.'} 
                         time={'10:00'}
-                        color='text-white bg-green-400'
+                        color='text-neutral bg-green-400'
                     />
                     </div>
                 </div>

@@ -11,7 +11,7 @@ const FreelancersPage = () => {
                     Create your profile,  showcase <i>your skills,</i> <br /> 
                     and verify your identity to unlock a <u><b>world of opportunities</b></u> 
                 </h2>  
-                <Button className='bg-black text-white w-36 mt-4'>Join Now</Button>
+                <Button className='bg-black text-neutral w-36 mt-4'>Join Now</Button>
             </div>
 
             {/* portfolio section */}

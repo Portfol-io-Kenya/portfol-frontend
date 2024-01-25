@@ -63,7 +63,7 @@ const Reports = () => {
                     <Card grow className='flex flex-col grow justify-between'>
                         <section>
                             <h4 className='font-semibold mb-3'>Scope Calculator</h4>
-                            <select className='bg-gray-200 rounded text-sm text-green-600 py-2 px-3 w-full outline-none'>
+                            <select className='bg-gray-200 rounded text-sm text-afrogreen py-2 px-3 w-full outline-none'>
                                 <option selected>Choose Project</option>
                                 <option>Safari Website</option>
                                 <option>Copywriting</option>
@@ -73,12 +73,12 @@ const Reports = () => {
 
                         <section>
                             <RadialStrokedChart />
-                            <h5 className='font-[600] text-2xl text-green-600 text-center -mt-16'>$2,500</h5>
+                            <h5 className='font-[600] text-2xl text-afrogreen text-center -mt-16'>$2,500</h5>
                             <p className='text-center text-sm text-slate-500'>
                                 Based on market trends, this is the recommended offer for 
                                 <Link 
                                     href="/find-work/jobs/1"
-                                    className='text-green-600'
+                                    className='text-afrogreen'
                                 > Safari Website UI</Link>.
                             </p>
                         </section>

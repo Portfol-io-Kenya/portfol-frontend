@@ -12,7 +12,7 @@ const Verified = () => {
             backgroundPosition: 'center center'
           }}
         >
-            <div className="h-full bg-black/80 flex flex-col items-center justify-center text-white">
+            <div className="h-full bg-black/80 flex flex-col items-center justify-center text-neutral">
                 <p className='mb-5 text-lg'>Congratulations! You are on a waitlist to great opportunities that await ahead.</p>
                 <CountDown targetDate={date} />
             </div>
