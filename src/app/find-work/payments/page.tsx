@@ -20,9 +20,9 @@ const Payments = () => {
                         <h5 className='text-2xl font-bold text-gray-600'>$10,568.14</h5>
 
                         <div className="flex gap-3 mt-4">
-                            <NumStat className='pl-3 pr-16 text-neutral' bgColor='bg-blue-400' textWhite titleStyle='text-lg text-neutral' value='20' description='Transactions' />
-                            <NumStat className='pl-3 pr-16 text-neutral' bgColor='bg-green-400' textWhite titleStyle='text-lg text-neutral' value='$8,500.20' description='Income' />
-                            <NumStat className='pl-3 pr-16 text-neutral' bgColor='bg-red-400' textWhite titleStyle='text-lg text-neutral' value='$34.20' description='Payments' />
+                            <NumStat className='pl-3 pr-16 text-neutral' bgColor='bg-afrogreen' textWhite titleStyle='text-lg text-neutral' value='20' description='Transactions' />
+                            <NumStat className='pl-3 pr-16 text-neutral' bgColor='bg-afrobrown/80' textWhite titleStyle='text-lg text-neutral' value='$8,500.20' description='Income' />
+                            <NumStat className='pl-3 pr-16 text-neutral' bgColor='bg-afroorange' textWhite titleStyle='text-lg text-neutral' value='$34.20' description='Payments' />
                         </div>
                     </Card>
 
@@ -40,7 +40,7 @@ const Payments = () => {
                 <div className="basis-1/3 flex flex-col gap-3">
                     <Card
                         image='url(/media/bgs/pattern-3.jpg)'
-                        bgColor='bg-gradient-radial from-black/50 to-black/90'
+                        bgColor='bg-gradient-radial from-black/50 to-black/80'
                         className='text-neutral pb-10'
                     >
 

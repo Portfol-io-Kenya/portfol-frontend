@@ -6,6 +6,11 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import HeroImage from '@/public/media/bgs/africa-map.png'
+import Dashboard from '@/public/media/portfol-dash-4.webp'
+import Jobs from '@/public/media/portfol-dash-2.webp'
+import ioPro from '@/public/media/portfol-dash-1.webp'
+import ioPay from '@/public/media/portfol-dash-5.webp'
+import Card from '@/components/cards/Card';
 
 export default function Home() {
   const router = useRouter();
@@ -44,21 +49,85 @@ export default function Home() {
       </div>
 
       {/* value proposition */}
-      <div className="flex bg-yellow-900 text-neutral items-center justify-center py-48 px-32">
-        <span className='text-center text-4xl leading-relaxed'>
+      <div className="flex flex-col bg-yellow-900 text-neutral items-center justify-center py-48 px-32">
+        <span className='text-center text-4xl leading-relaxed mb-20'>
           At <b>Portfolio</b>, we bridge the gap between talent and opportunity. Explore a world of 
           skilled African freelancers ready to bring your projects to life. Join us in reshaping the 
           future of work.
         </span>
+        <Image 
+          src={Dashboard}
+          alt='portfol-jobs-dashboard'
+        />
       </div>
 
-      {/* featured jobs */}
-      <div className="flex flex-col items-center p-20">
-        <h3 className='text-2xl font-bold'>Platform Features</h3>
-        <div className="mt-10 grid grid-cols-3 gap-3">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+      {/* features */}
+      <div className="flex flex-col items-center p-20 backdrop-blur bg-white/50">
+        <h3 className='text-2xl font-bold mb-12'>Platform Features</h3>
+        {/* feature 1 */}
+        <div className="mt-10 flex">
+          <div className="basis-1/2 flex flex-col justify-center">
+            <h4 className='font-bold text-xl mb-3'>Find Your Perfect Opportunity</h4>
+            <p>
+              Navigate our user-friendly platform with ease, ensuring a smooth experience for both 
+              freelancers and clients
+            </p>
+            <Button onClick={() => router.push('/auth/login')} className='bg-primary text-white w-36 mt-4'>
+              Start Now
+            </Button>
+          </div>
+          <div className="basis-1/2">
+            <Image
+              src={Jobs} 
+              alt='portfol.io-jobs-portal'
+              className='drop-shadow-xl'
+            />
+          </div>
+        </div>
+
+        {/* feature 2 */}
+        <div className="mt-40 flex">
+          <div className="basis-1/2">
+            <Image
+              src={ioPro} 
+              alt='portfol.io-jobs-portal'
+              className='drop-shadow-xl'
+            />
+          </div>
+          <div className="basis-1/2 flex flex-col justify-center pl-16">
+            <h4 className='font-bold text-xl mb-3'>Stay On Top With io Pro</h4>
+            <p>
+              io Pro is our project management module. Manage and monitor your projects from within 
+              the portal.
+            </p>
+            <Button onClick={() => router.push('/auth/login')} className='bg-primary text-white w-36 mt-4'>
+              Start Now
+            </Button>
+          </div>
+          
+        </div>
+
+         {/* feature 3 */}
+         <div className="mt-40 flex">
+          <div className="basis-1/2 flex flex-col justify-center">
+            <h4 className='font-bold text-xl mb-3'>Use io Pay & Securely Manage Your Payments</h4>
+            <p>
+              io Pro is our project management module. Manage and monitor your projects from within 
+              the portal.
+            </p>
+            <Button onClick={() => router.push('/auth/login')} className='bg-primary text-white w-36 mt-4'>
+              Start Now
+            </Button>
+          </div>
+
+          <div className="basis-1/2">
+            <Image
+              src={ioPay} 
+              alt='portfol.io-jobs-portal'
+              className='drop-shadow-xl rounded-lg'
+            />
+          </div>
+          
         </div>
       </div>
 
