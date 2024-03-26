@@ -106,8 +106,10 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   pages: {
-    signIn: "/find-work/jobs",
-    newUser: "/find-work/jobs",
+    // signIn: "/find-work/jobs",
+    signIn: "/auth/waitlist",
+    // newUser: "/find-work/jobs",
+    newUser: "/auth/waitlist",
     error: "/auth/login",
   },
   callbacks: {

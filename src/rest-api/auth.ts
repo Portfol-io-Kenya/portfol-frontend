@@ -35,8 +35,10 @@ export function useLogin() {
   
     // then the user is authenticated
     setAuthorized(true);
-    router.push('/find-work/jobs')
-    toast.success('You are logged in!', {autoClose:3500, position: 'top-center'})
+    // router.push('/find-work/jobs')
+    router.push('/auth/waitlist')
+    toast.success('Thank you for joining our waitlist!', {autoClose:5000, position: 'top-center'})
+    // toast.success('You are logged in!', {autoClose:3500, position: 'top-center'})
     },
     onError: (error: any) => {
       console.log(error.response.data.message);
