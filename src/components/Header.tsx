@@ -10,6 +10,8 @@ const MENU = [
     {name: 'Find Work', href: '/find-work/jobs'},
     {name: 'Proposals', href: '/find-work/proposals'},
     {name: 'Reports', href: '/find-work/reports'},
+    {name: 'Candidates', href: '/find-work/candidates/1'},
+    {name: 'Employers', href: '/find-work/employers/1'},
 ]
 
 const Header = () => {

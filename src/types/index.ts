@@ -57,6 +57,13 @@ export interface RegisterUserInput {
   password: string;
 }
 
+export interface ContactEmployerInput {
+  email: string;
+  subject: string;
+  number: string;
+  message: string;
+}
+
 export interface RegisterCompanyInput {
   name: string;
   email: string;

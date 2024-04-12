@@ -4,18 +4,20 @@ import Avatar from '../UI/Avatar';
 import Card from './Card';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 
 interface Props {
     title: string,
     location: string,
     img?: any
     description: string
+    className?: string
 }
 
-const JobCard: React.FC<Props> = ({title, location, img, description}) => {
+const JobCard: React.FC<Props> = ({title, location, img, description, className}) => {
     const pathname = usePathname()
     return (
-        <Card className='bg-white mb-3 p-4 w-full'>
+        <Card className={clsx(`bg-white mb-3 p-4 w-full ${className}`)}>
             <div className="flex flex-col md:flex-row">
                 <div className="flex md:flex-grow">
                     {/* job random ankara avatar  */}
