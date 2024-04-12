@@ -46,9 +46,9 @@ const SingleCandidate = () => {
                                     <span className='text-xs text-slate-400'>$500p/m</span>
                                 </div>
                                 <div className='flex gap-3 mt-5'>
-                                    <Pill />
-                                    <Pill />
-                                    <Pill />
+                                    <Pill text='Websites' />
+                                    <Pill text='Apps' />
+                                    <Pill text='Mobile' />
                                 </div>
                             </div>
 

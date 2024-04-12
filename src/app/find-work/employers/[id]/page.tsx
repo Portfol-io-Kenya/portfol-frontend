@@ -35,7 +35,7 @@ const SingleEmployer = () => {
                             <IconText icon='iconly-Message' title='email@example.com'/>
                         </div>
 
-                        <Pill />
+                        <Pill text='Open Jobs - 5' />
                     </div>
                     <div className="flex justify-end items-center">
                         <Button className='bg-primary text-white text-xs font-normal' size='small'>
