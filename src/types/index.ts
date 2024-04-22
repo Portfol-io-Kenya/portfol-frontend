@@ -75,6 +75,14 @@ export interface AuthResponse {
   token: string;
 }
 
+export interface Settings {
+
+}
+
+export interface Attachment {
+  
+}
+
 export type User = {
   token: {
     access_token: string

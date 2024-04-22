@@ -6,7 +6,9 @@ import {
     JobPaginator,
     Job,
     RegisterUserInput,
-    RegisterCompanyInput
+    RegisterCompanyInput,
+    Settings,
+    Attachment
 } from '@/types';
 import { API_ENDPOINTS } from './api-endpoints';
 import { HttpClient } from './http-client';
@@ -30,6 +32,21 @@ class Client {
         ),
       get: (profileId: string) =>
           HttpClient.get<Job>(`${API_ENDPOINTS.OPPORTUNITIES}/myopportunities/${profileId}`),
+    };
+    settings = {
+      //FIXME: check this async function
+      all: async () => HttpClient.get<Settings>(API_ENDPOINTS.SETTINGS),
+      upload: (input: File[]) => {
+        let formData = new FormData();
+        input.forEach((attachment) => {
+          formData.append('attachment[]', attachment);
+        });
+        return HttpClient.post<Attachment[]>(API_ENDPOINTS.UPLOADS, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+      },
     };
 }
 

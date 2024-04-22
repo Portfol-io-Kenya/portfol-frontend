@@ -1,30 +1,29 @@
 "use client"
 import * as React from 'react';
 import clsx from 'clsx';
-import Button from '../UI/Button';
+import Button from '../../UI/Button';
 import * as yup from 'yup';
 import { ContactEmployerInput, RegisterUserInput } from '@/types';
-import Form from '../forms/form';
-import Input from '../forms/input';
+import Form from '../../forms/form';
+import Input from '../../forms/input';
 import { useRegister } from '@/rest-api/auth';
 import YupPassword from 'yup-password'
-import TextArea from '../forms/text-area';
+import TextArea from '../../forms/text-area';
+import { useUploads } from '@/rest-api/settings';
+import FileInput from '../../forms/file-input';
 
 YupPassword(yup) // extend yup
 
 
 const loginSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email('Invalid email format')
-    .required('Email is required.'),
-  subject: yup.string().required('Subject is required'),
-  lastName: yup.string(),
-  message: yup.string().required('Please type your message')
+    title: yup.string().required('Job Title is required.'),
+    description: yup.string().required('Please type the description'),
+    subject: yup.string().required('Subject is required'),
+    lastName: yup.string()
 });
 
-const ContactForm = () => {
-  const { mutate: register, isPending, formError, setFormError } = useRegister();
+const SocialNetwork = () => {
+  const { mutate: register, isPending } = useUploads({});
 
   function onSubmit({ email, subject, number, message }: ContactEmployerInput) {
     console.log({
@@ -45,21 +44,18 @@ const ContactForm = () => {
         onClose={() => setServerError(null)}
       /> */}
       <Form onSubmit={onSubmit} yupSchema={loginSchema}>
-        <Input name='email' label='Email' type='email' inputClassName='bg-gray-100' />
-        <Input name='subject' label='Subject ' type='text' />
-        <Input name='lastName' label='Last Name' type='text' />
-        <TextArea name='message' label='Message' />
 
-        
+        <Input dimension='big' name='jobTitle' label='Job Title' type='text' className='mb-10' />
+
         <Button
             className={clsx("flex justify-center mt-2 w-full rounded-xl bg-afrogreen py-[12px] text-base font-medium \
             text-neutral transition duration-200 hover:bg-dark active:bg-dark  \
             hover:cursor-pointer")} 
             type="submit" 
             disabled={isPending}
-            onClick={() => setFormError(null)}
+            // onClick={}
         >
-            <span className='indicator-label'>Send Message</span>
+            <span className='indicator-label'>Add Social Network</span>
         </Button>
       </Form>
     </div>
@@ -67,4 +63,4 @@ const ContactForm = () => {
 
 }
 
-export default ContactForm;
+export default SocialNetwork;

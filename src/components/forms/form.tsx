@@ -21,6 +21,8 @@ export default function Form({ defaultValues, children, onSubmit, yupSchema }: P
               ...{
                 ...child.props,
                 register: methods.register,
+                watch: methods.watch,
+                setValue: methods.setValue,
                 errors: errors,
                 key: child.props.name,
               },

@@ -7,10 +7,16 @@ import { FiLogOut } from "react-icons/fi"
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import { signOut } from "next-auth/react"
+import { AiFillProfile } from 'react-icons/ai';
 
 const AccountDropdown = () => {
     const router = useRouter();
     const DROPDOWN = [
+        {
+            title: 'My Profile', 
+            onClick: () =>  router.push('/find-work/profile'), 
+            icon: <AiFillProfile /> 
+        },
         {
             title: 'Logout', 
             onClick: () => {
@@ -18,7 +24,9 @@ const AccountDropdown = () => {
                 signOut({ callbackUrl: '/auth/login' })
                 toast.error('You are being logged out!', {autoClose: 3500, position: 'top-center'})
             }, 
-            icon: <FiLogOut /> }
+            icon: <FiLogOut /> 
+        },
+
     ]
     return (
         <div>

@@ -9,5 +9,7 @@ export const API_ENDPOINTS = {
   OPPORTUNITIES: '/opportunity',
   JOBS: '/jobs/find-jobs',
   TEST: '/users',
+  SETTINGS: '/settings',
+  UPLOADS: '/uploads',
 };
   
