@@ -73,20 +73,6 @@ const MyProfile = () => {
 
         <Input dimension='big' name='jobTitle' label='Job Title' type='text' className='mb-10' />
         <TextArea name='description' label='Job Description' inputClassName='mb-10' />
-
-        
-
-        
-        <Button
-            className={clsx("flex justify-center mt-2 w-full rounded-xl bg-afrogreen py-[12px] text-base font-medium \
-            text-neutral transition duration-200 hover:bg-dark active:bg-dark  \
-            hover:cursor-pointer")} 
-            type="submit" 
-            disabled={isPending}
-            // onClick={}
-        >
-            <span className='indicator-label'>Submit Job</span>
-        </Button>
       </Form>
     </div>
   )

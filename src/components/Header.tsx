@@ -13,6 +13,7 @@ const MENU = [
     {name: 'Candidates', href: '/find-work/candidates/1'},
     {name: 'Employers', href: '/find-work/employers/1'},
     {name: 'Submit Job', href: '/find-work/submit-job'},
+    {name: 'Shortlisted Jobs', href: '/find-work/shortlisted-jobs'},
 ]
 
 const Header = () => {
