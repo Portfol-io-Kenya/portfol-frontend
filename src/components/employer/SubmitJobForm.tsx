@@ -3,7 +3,7 @@ import * as React from 'react';
 import clsx from 'clsx';
 import Button from '../UI/Button';
 import * as yup from 'yup';
-import { ContactEmployerInput, RegisterUserInput } from '@/types';
+import { ContactEmployerInput, RegisterUserInput, SubmitJobInput } from '@/types';
 import Form from '../forms/form';
 import Input from '../forms/input';
 import { useRegister } from '@/rest-api/auth';
@@ -25,12 +25,10 @@ const loginSchema = yup.object().shape({
 const SubmitJobForm = () => {
   const { mutate: register, isPending } = useUploads({});
 
-  function onSubmit({ email, subject, number, message }: ContactEmployerInput) {
+  function onSubmit({ jobTitle, jobDescription }: SubmitJobInput) {
     console.log({
-      email,
-      subject,
-      number,
-      message,
+      jobTitle,
+      jobDescription
     });
   }
 
@@ -45,17 +43,17 @@ const SubmitJobForm = () => {
       /> */}
       <Form onSubmit={onSubmit} yupSchema={loginSchema}>
         <FileInput name='upload' label="Featured Image" />
-        <Input dimension='big' name='title' label='Job Title' type='text' className='mb-10' />
-        <TextArea name='description' label='Job Description' inputClassName='mb-10' />
+        <Input dimension='big' name='jobTitle' label='Job Title' type='text' className='mb-10' />
+        <TextArea name='jobDescription' label='Job Description' inputClassName='mb-10' />
 
-        <Input dimension='big' name='category' label='Category' type='text' className='w-1/2 float-left pr-4 mb-10' />
-        <Input dimension='big' name='type' label='Type' type='text' className='w-1/2 float-right pl-4 mb-10' />
+        <Input dimension='big' name='jobCategory' label='Category' type='text' className='w-1/2 float-left pr-4 mb-10' />
+        <Input dimension='big' name='jobType' label='Type' type='text' className='w-1/2 float-right pl-4 mb-10' />
+
+        <Input dimension='big' name='minSalary' label='Min Salary' type='text' className='w-1/2 float-left pr-4 mb-10' />
+        <Input dimension='big' name='maxSalary' label='Max Salary' type='text' className='w-1/2 float-right pl-4 mb-10' />
 
         <Input dimension='big' name='tag' label='Tag' type='text' className='w-1/2 float-left pr-4 mb-10' />
         <Input dimension='big' name='gender' label='Gender' type='text' className='w-1/2 float-right pl-4 mb-10' />
-
-        <Input dimension='big' name='category' label='Category' type='text' className='w-1/2 float-left pr-4 mb-10' />
-        <Input dimension='big' name='type' label='Type' type='text' className='w-1/2 float-right pl-4 mb-10' />
 
         <Input dimension='big' name='apply_type' label='Application Type' type='text' className='w-1/2 float-left pr-4 mb-10' />
         <Input dimension='big' name='external_url' label='External URL for Job Application' type='text' className='w-1/2 float-right pl-4 mb-10' />
@@ -63,8 +61,6 @@ const SubmitJobForm = () => {
         <Input dimension='big' name='apply_email' label='Application Email' type='text' className='w-1/2 float-left pr-4 mb-10' />
         <Input dimension='big' name='salary_type' label='Salary Type' type='text' className='w-1/2 float-right pl-4 mb-10' />
 
-        <Input dimension='big' name='minSalary' label='Min Salary' type='text' className='w-1/2 float-left pr-4 mb-10' />
-        <Input dimension='big' name='maxSalary' label='Max Salary' type='text' className='w-1/2 float-right pl-4 mb-10' />
 
         <Input dimension='big' name='experience' label='Experience' type='text' className='w-1/2 float-left pr-4 mb-10' />
         <Input dimension='big' name='careerLevel' label='Career Level' type='text' className='w-1/2 float-right pl-4 mb-10' />

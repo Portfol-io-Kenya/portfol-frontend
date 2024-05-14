@@ -2,6 +2,7 @@ import React from 'react';
 import Avatar from '../UI/Avatar';
 import IconText from '../IconText';
 import Divider from '../UI/Divider';
+import Link from 'next/link';
 
 const ShortlistedJob = () => {
     return (
@@ -12,7 +13,9 @@ const ShortlistedJob = () => {
                         <Avatar img='url(/media/bgs/pattern-7.jpg)' className={'mr-5 bg-no-repeat'}/>
                     </div>
                     <div className="flex flex-col">
-                        <p className='font-medium hover:text-secondary'>Senior Software Engineer</p>   
+                        <Link href={'/find-work/'}>
+                            <p className='font-medium hover:text-secondary'>Senior Software Engineer</p>   
+                        </Link>
                         <div className="flex gap-6 my-2">
                             <IconText icon='iconly-Work' title='Application'/>
                             <IconText icon='iconly-Location' title='Nairobi, Kenya'/>

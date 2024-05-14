@@ -75,6 +75,29 @@ export interface AuthResponse {
   token: string;
 }
 
+export interface SubmitJobInput {
+  jobTitle: string;
+  jobDescription: string;
+  featuredImage?: any;
+  jobCategory: string;
+  jobType: string;
+  jobTag?: string;
+  jobEmail?: string;
+  jobMinSalary: string;
+  jobMaxSalary: string;
+  jobSalaryType: string;
+  jobExperience?: string;
+  jobCareerLevel?: string;
+  jobQualification?: string;
+  jobVideoURL?: string;
+  jobPhotos?: any;
+  jobDeadline?: string;
+  jobAddress?: string;
+  jobLocation: string;
+  
+
+}
+
 export interface Settings {
 
 }
