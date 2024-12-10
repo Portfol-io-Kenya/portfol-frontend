@@ -25,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx('flex min-h-screen flex-col justify-between', montserrat.className)}>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <NextAuthProvider>
           <QueryProvider>
             {children}
